@@ -1,0 +1,13 @@
+Musikk artister salg - youtube video statistics - music features(column family) - record labels(graph)
+
+1.https://www.kaggle.com/pieca111/music-artists-popularity / https://www.kaggle.com/andrewmvd/music-sales
+
+2. https://www.kaggle.com/datasnaek/youtube-new
+
+3. https://www.kaggle.com/insiyeah/musicfeatures
+
+4. https://www.kaggle.com/revilrosa/music-label-dataset
+
+
+
+genre classification - https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification
