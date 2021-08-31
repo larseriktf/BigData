@@ -11,3 +11,5 @@ Musikk artister salg - youtube video statistics - music features(column family) 
 
 
 genre classification - https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification
+
+tiktok trending - https://www.kaggle.com/erikvdven/tiktok-trending-december-2020
