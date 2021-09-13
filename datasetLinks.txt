@@ -1,0 +1,15 @@
+Musikk artister salg - youtube video statistics - music features(column family) - record labels(graph)
+
+1.https://www.kaggle.com/pieca111/music-artists-popularity / https://www.kaggle.com/andrewmvd/music-sales - Key-value
+
+2. https://www.kaggle.com/datasnaek/youtube-new - Key-value
+
+3. https://www.kaggle.com/insiyeah/musicfeatures
+
+4. https://www.kaggle.com/revilrosa/music-label-dataset - Artist Column-Oriented/Document Database
+
+
+
+genre classification - https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification - Column-oriented
+
+tiktok trending - https://www.kaggle.com/erikvdven/tiktok-trending-december-2020  - Key-value
