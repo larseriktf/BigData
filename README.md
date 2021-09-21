@@ -1,14 +1,14 @@
 # Big Data
 ## Music Artists Popularity (Key Value Database)
-  - id
-  - artist
+	- id
+	- artist
 	- country
 	- tags
 	- listeners
 	- ambiguous_artist
 ## Grammy Awards (Graph Database)
-  - year
-  - title
+	- year
+	- title
 	- published
 	- updated
 	- category
@@ -18,8 +18,8 @@
 	- img
 	- winner
 ## Top Spotify Songs From 2010 To 2019 (Document Database)
-  - id
-  - title
+  	- id
+  	- title
 	- artist
 	- top genre
 	- year
@@ -29,8 +29,8 @@
 	- loudness (db)
 	- liveness
 ## Profanity In Music (Column Database)
-  - artist
-  - album
+  	- artist
+  	- album
 	- song
 	- total words
 	- foul language used
