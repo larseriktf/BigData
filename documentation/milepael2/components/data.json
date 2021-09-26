@@ -1,36 +1,45 @@
 {
-    "averageGradeByParentEducation": {
-        "education": {
-            "values": [1, 2, 3, 4],
-            "names" : [
-                "None",
-                "Primary education",
-                "5th to 9th grade",
-                "Secondary education",
-                "Higher education"
-            ]
+    "averageGradesByParentEducation": {
+        "none": {
+            "fatherEducation":10,
+            "motherEducation":15
         },
-        "grades": {
-            "gradesFather": [10, 10, 10, 9],
-            "gradesMother": [15, 15, 15, 14]
+        "primaryEducation": {
+            "fatherEducation":10,
+            "motherEducation":15
+        },
+        "fifthToNinthGrade": {
+            "fatherEducation":10,
+            "motherEducation":15
+        },
+        "secondaryEducation": {
+            "fatherEducation":10,
+            "motherEducation":15
+        },
+        "higherEducation": {
+            "fatherEducation":9,
+            "motherEducation":14
         }
     },
     "averageGradesByStudyHours": {
-        "grades": {
-            "gradeMale": [ 10, 15, 14, 13],
-            "gradeFemale": [15, 15, 15, 14]
+        "lessThanTwo": {
+            "male": 10,
+            "female": 15
         },
-        "weeklyStudyHours": {
-            "values": [1, 2, 3, 4, 5],
-            "names": [
-                "<2",
-                "2 - 5",
-                "5 - 10",
-                ">10"
-            ]
+        "twoToFive": {
+            "male": 15,
+            "female": 15
+        },
+        "fiveToTen": {
+            "male": 14,
+            "female": 15
+        },
+        "greaterThanTen": {
+            "male": 13,
+            "female": 14
         }
     },
-    "averageGradesVennDiagram": {
+    "averageGradesByEducationalAid": {
         "internet-support": 15,
         "internet-extra": 14,
         "support-extra": 13,
@@ -39,34 +48,91 @@
         "schoolSupport": 11,
         "extraCourses": 12
     },
-
-    "freeTimeByStudents": {
-        "freeTime": [1, 2, 3, 4, 5],
-        "percentageOfStudents": [11, 20, 30, 25, 14]
+    "studentsByFreeTimeInPercent": {
+        "veryLittle": 11,
+        "little": 20,
+        "medium": 30,
+        "much": 25,
+        "veryMuch": 14
     },
-    "freeTimeByStudents2.0": {
-        "Very little": 11,
-        "Little": 20,
-        "Medium": 30,
-        "Much": 25,
-        "Very much": 14
+    "freeTimeByStudyHours": {
+        "lessThanTwo": 2.5,
+        "twoToFive": 5.3,
+        "fiveToTen": 7.5,
+        "greaterThanTen": 2.5
     },
-    
-    "freeTimeWithStudyHours": {
-        "freeTime": [1, 2, 3, 4, 5],
-        "weeklyStudyHours": [
-            "<2",
-            "2 - 5",
-            "5 - 10",
-            ">10"
-        ]
-    },
-    "averageGradeFamilyAndAlcohol": {
-        "familyRelation": [1, 2, 3, 4, 5],
-        "alcoholConsumption": {
-            "weekendAlcoholConsumption": [1, 2, 3, 4, 5],
-            "weekdayAlcoholConsumption": [1, 2, 3, 4, 5]
+    "agesByAlcoholWorkDaysAndWeekends": {
+        "veryLow": {
+            "workDays": 15,
+            "weekends": 18
         },
-        "averageGrade": [12, 14, 11, 8, 7]
+        "low": {
+            "workDays": 18,
+            "weekends": 19
+        },
+        "medium": {
+            "workDays": 22,
+            "weekends": 18
+        },
+        "high": {
+            "workDays": 18,
+            "weekends": 22
+        },
+        "veryHigh": {
+            "workDays": 20,
+            "weekends": 21
+        }
+    },
+    "familyRelationAndAverageGradeByAlcohol": {
+        "veryLow": {
+            "workDays": {
+                "familyRelation": 3.4,
+                "grade": 12
+            },
+            "weekends": {
+                "familyRelation": 4.9,
+                "grade": 14
+            }
+        },
+        "low": {
+            "workDays": {
+                "familyRelation": 4,
+                "grade": 14
+            },
+            "weekends": {
+                "familyRelation": 3.6,
+                "grade": 11
+            }
+        },
+        "medium": {
+            "workDays": {
+                "familyRelation": 3.1,
+                "grade": 11
+            },
+            "weekends": {
+                "familyRelation": 4.1,
+                "grade": 15
+            }
+        },
+        "high": {
+            "workDays": {
+                "familyRelation": 3.1,
+                "grade": 8
+            },
+            "weekends": {
+                "familyRelation": 2.8,
+                "grade": 12
+            }
+        },
+        "veryHigh": {
+            "workDays": {
+                "familyRelation": 0.8,
+                "grade": 7
+            },
+            "weekends": {
+                "familyRelation": 1.9,
+                "grade": 9
+            }
+        }
     }
 }
