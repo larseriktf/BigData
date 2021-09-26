@@ -1,0 +1,72 @@
+{
+    "averageGradeByParentEducation": {
+        "education": {
+            "values": [1, 2, 3, 4],
+            "names" : [
+                "None",
+                "Primary education",
+                "5th to 9th grade",
+                "Secondary education",
+                "Higher education"
+            ]
+        },
+        "grades": {
+            "gradesFather": [10, 10, 10, 9],
+            "gradesMother": [15, 15, 15, 14]
+        }
+    },
+    "averageGradesByStudyHours": {
+        "grades": {
+            "gradeMale": [ 10, 15, 14, 13],
+            "gradeFemale": [15, 15, 15, 14]
+        },
+        "weeklyStudyHours": {
+            "values": [1, 2, 3, 4, 5],
+            "names": [
+                "<2",
+                "2 - 5",
+                "5 - 10",
+                ">10"
+            ]
+        }
+    },
+    "averageGradesVennDiagram": {
+        "internet-support": 15,
+        "internet-extra": 14,
+        "support-extra": 13,
+        "all": 16,
+        "internet": 12,
+        "schoolSupport": 11,
+        "extraCourses": 12
+    },
+
+    "freeTimeByStudents": {
+        "freeTime": [1, 2, 3, 4, 5],
+        "percentageOfStudents": [11, 20, 30, 25, 14]
+    },
+    "freeTimeByStudents2.0": {
+        "Very little": 11,
+        "Little": 20,
+        "Medium": 30,
+        "Much": 25,
+        "Very much": 14
+    },
+    
+    "freeTimeWithStudyHours": {
+        "freeTime": [1, 2, 3, 4, 5],
+        "weeklyStudyHours": [
+            "<2",
+            "2 - 5",
+            "5 - 10",
+            ">10"
+        ]
+    },
+    "averageGradeFamilyAndAlcohol": {
+        "familyRelation": [1, 2, 3, 4, 5],
+        "alcoholConsumption": {
+            "weekendAlcoholConsumption": [1, 2, 3, 4, 5],
+            "weekdayAlcoholConsumption": [1, 2, 3, 4, 5]
+        },
+        "averageGrade": [12, 14, 11, 8, 7]
+    }
+}
