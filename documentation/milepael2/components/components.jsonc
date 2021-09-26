@@ -55,7 +55,8 @@
     "alcoholConsumption": {
         "weekendAlcoholConsumption": [1, 2, 3, 4, 5],
         "weekdayAlcoholConsumption": [1, 2, 3, 4, 5]
-    }
+    },
+    "averageGrade": [12, 14, 11, 8, 7]
     
 }
 
