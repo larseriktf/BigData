@@ -1,27 +1,81 @@
 
 {
+    
+    "students":
+    [{
+        "studentId": 1,
+        "gender": "female",
+        "age": 18,
+        "motherEducation": 4,
+        "fatherEducation": 4,
+        "travelTime": 4,
+        "studyTime": 4,
+        "failures": 0,
+        "schoolSupport": true,
+        "extraPaidCourses": true,
+        "extraCurriculars": true,
+        "internet": true,
+        "romanticRelationship": true,
+        "familyRelation": 1,
+        "freeTime": 1,
+        "goOut": 3,
+        "weekdayAlcoholConsumption": 1,
+        "weekendAlcoholConsumption": 2,
+        "health": 3,
+        "absences": 3,
+        "midtermOne": 15,
+        "midtermTwo": 13,
+        "finals": 16
+    },
+    {
+        "studentId": 2,
+        "gender": "male",
+        "age": 18,
+        "motherEducation": 4,
+        "fatherEducation": 4,
+        "travelTime": 4,
+        "studyTime": 4,
+        "failures": 0,
+        "schoolSupport": true,
+        "extraPaidCourses": true,
+        "extraCurriculars": true,
+        "internet": true,
+        "romanticRelationship": true,
+        "familyRelation": 4,
+        "freeTime": 2,
+        "goOut": 2,
+        "weekdayAlcoholConsumption": 1,
+        "weekendAlcoholConsumption": 3,
+        "health": 1,
+        "absences": 31,
+        "midtermOne": 5,
+        "midtermTwo": 12,
+        "finals": 0
+    }
+],
+
+"freeTime": {
+    "numbers": [1, 2, 3, 4, 5],
+    "values": ["Very Little", "Little", "Medium", "Much", "Very Much"]
+},
+
+"eductionLevel":{
     "education": [1, 2, 3, 4],
     "averageGrades": {
         "gradeFather": [10, 10, 10, 9],
         "gradeMother": [15, 15, 15, 14]
     }
-}
+    },
 
-{
+    "averageGradesWithStudyHours":{
     "grades":{
         "gradeFemale": [15, 15, 15, 14],
         "gradeMale": [10, 15, 14, 13]
     },
-    "weeklyStudyHours": [ObjectId("weeklyStudyHours")]
-}
-
-{
-    "id":"weeklyStudyHours",
     "weeklyStudyHours": ["<2", "2 - 5", "5 - 10", ">10"]
-}
+    },
 
-{
-    "averageGrades": {
+    "averageGradesVennDiagram":{
         "internet-support": 15,
         "internet-extra": 14,
         "support-extra": 13,
@@ -29,59 +83,28 @@
         "internet": 12,
         "schoolSupport": 11,
         "extraCourses": 12
-        
-}
+    },
 
-{
-    "id": "freeTime",
-    "freeTime": [{"Very Little": 1, 
-        "Little": 2, 
-        "Medium": 3, 
-        "Much": 4, 
-        "Very Much": 5}]
-}
-{
-    "freeTime":[ObjectId("freeTime")],
+    
+
+    "freeTimeByStudents":{
+    "freeTime": [1, 2, 3, 4, 5],
     "percentageOfStudents": [11, 20, 30, 25, 14]
-}
+    },
 
-{
-    "freeTime": [ObjectId("freeTime")],
-    "weeklyStudyHours": [ObjectId("weeklyStudyHours")]
-}
+    "freeTimeWithStudyHours": {
+    "freeTime": [1, 2, 3, 4, 5],
+    "weeklyStudyHours": ["<2", "2 - 5", "5 - 10", ">10"]
+    },
 
-{
+
+    "averageGradeFamilyAndAlcohol": {
     "familyRelation": [1, 2, 3, 4, 5],
     "alcoholConsumption": {
         "weekendAlcoholConsumption": [1, 2, 3, 4, 5],
         "weekdayAlcoholConsumption": [1, 2, 3, 4, 5]
     },
     "averageGrade": [12, 14, 11, 8, 7]
-    
+    }
 }
 
-{
-    "studentId": 1,
-    "gender": "female",
-    "age": 18,
-    "motherEducation": 4,
-    "fatherEducation": 4,
-    "travelTime": 4,
-    "studyTime": 4,
-    "failures": 0,
-    "schoolSupport": true,
-    "extraPaidCourses": true,
-    "extraCurriculars": true,
-    "internet": true,
-    "romanticRelationship": true,
-    "familyRelation": 1,
-    "freeTime": [ObjectId("freeTime")],
-    "goOut": 3,
-    "weekdayAlcoholConsumption": 1,
-    "weekendAlcoholConsumption": 2,
-    "health": 3,
-    "absences": 3,
-    "midtermOne": 15,
-    "midtermTwo": 13,
-    "finals": 16
-}
