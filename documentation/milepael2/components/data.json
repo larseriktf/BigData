@@ -1,4 +1,29 @@
 {
+    "averageGradesByStudyHours": {
+        "lessThanTwo": {
+            "male": 10,
+            "female": 15
+        },
+        "twoToFive": {
+            "male": 15,
+            "female": 15
+        },
+        "fiveToTen": {
+            "male": 14,
+            "female": 15
+        },
+        "greaterThanTen": {
+            "male": 13,
+            "female": 14
+        }
+    },
+    "studentsByFreeTime": {
+        "veryLittle": 11,
+        "little": 20,
+        "medium": 30,
+        "much": 25,
+        "veryMuch": 14
+    },
     "averageGradesByParentEducation": {
         "none": {
             "fatherEducation":10,
@@ -21,24 +46,6 @@
             "motherEducation":14
         }
     },
-    "averageGradesByStudyHours": {
-        "lessThanTwo": {
-            "male": 10,
-            "female": 15
-        },
-        "twoToFive": {
-            "male": 15,
-            "female": 15
-        },
-        "fiveToTen": {
-            "male": 14,
-            "female": 15
-        },
-        "greaterThanTen": {
-            "male": 13,
-            "female": 14
-        }
-    },
     "averageGradesByEducationalAid": {
         "internet-support": 15,
         "internet-extra": 14,
@@ -47,13 +54,6 @@
         "internet": 12,
         "schoolSupport": 11,
         "extraCourses": 12
-    },
-    "studentsByFreeTimeInPercent": {
-        "veryLittle": 11,
-        "little": 20,
-        "medium": 30,
-        "much": 25,
-        "veryMuch": 14
     },
     "freeTimeByStudyHours": {
         "lessThanTwo": 2.5,
