@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/student/Documents/BigData/project/LoadData.scala:21:1: unclosed comment[0m
+[0m[[0m[31merror[0m] [0m[0m/*[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/Documents/BigData/project/LoadData.scala:35:2: '}' expected but eof found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
