@@ -1,9 +1,17 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging /home/student/Documents/BigData/project/target/scala-2.12/project_2.12-0.1.0-SNAPSHOT.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	LoadData$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/LoadData$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	LoadData$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/LoadData$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	LoadData.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/LoadData.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AverageGradesByStudyHours$AvgGradesByStudyHours$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AverageGradesByStudyHours$AvgGradesByStudyHours$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AverageGradesByStudyHours$AvgGradesByStudyHours.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AverageGradesByStudyHours$AvgGradesByStudyHours.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AverageGradesByStudyHours$AvgGrades$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AverageGradesByStudyHours$AvgGrades$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AverageGradesByStudyHours.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AverageGradesByStudyHours.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AverageGradesByStudyHours$AvgGrades.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AverageGradesByStudyHours$AvgGrades.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AverageGradesByStudyHours$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AverageGradesByStudyHours$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AverageGradesByStudyHours$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AverageGradesByStudyHours$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
