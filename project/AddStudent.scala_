@@ -32,9 +32,9 @@ object AddStudent extends App {
     println("--- Fill In The Following Fields ---");
     print("sex (Char: F or M): ");
     val sex = readChar();
-    print("Mother's Education (Int: 1-4): ");
+    print("Mother's Education (Int: 0-4): ");
     val motherEdu = readInt();
-    print("Father's Education (Int: 1-4): ");
+    print("Father's Education (Int: 0-4): ");
     val fatherEdu = readInt();
     print("Study Time (Int: 1-4): ");
     val studyTime = readInt();
