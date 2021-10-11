@@ -1,8 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(27a61e58-66e3-4a0d-8eef-6aa4332dc84b), Some(CommandSource(console0)))[0m
-[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
-[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/student/Documents/BigData/project/target/scala-2.12/classes ...[0m
-[0m[[0m[33mwarn[0m] [0m[0mone deprecation; re-run with -deprecation for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
-[0m[[0m[32msuccess[0m] [0m[0mTotal time: 1 s, completed Oct 10, 2021, 7:06:12 AM[0m
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
