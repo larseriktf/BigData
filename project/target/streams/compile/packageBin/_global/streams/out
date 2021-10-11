@@ -2,14 +2,14 @@
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Node$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/Node$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AvgGradesByParentEdu$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AvgGradesByParentEdu$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	HttpGetPostTest$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/HttpGetPostTest$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Node.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/Node.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AvgGradesByStudyHours$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AvgGradesByStudyHours$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AvgGradesByStudyHours.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AvgGradesByStudyHours.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AvgGradesByParentEdu.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AvgGradesByParentEdu.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	NodeResponse$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/NodeResponse$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AvgGrades$.class[0m
