@@ -1,0 +1,186 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reload, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtStashOnFailure, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(onFailure loadFailed, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(loadp, None, None)[0m
+[0m[[0m[0minfo[0m] [0m[0mwelcome to sbt 1.5.5 (Ubuntu Java 11.0.11)[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.defaultLoad until apply took 1.480536ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                                  Load.loadUnit: plugins took 17.036211ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                                  Load.loadUnit: defsScala took 0.0051ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Scanning directory /home/student/BigData/project/project[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Found non-root projects [0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in /home/student/BigData/project/project, returning: ()[0m
+[0m[[0m[0mdebug[0m] [0m[0mdeducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))[0m
+[0m[[0m[0mdebug[0m] [0m[0m  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)[0m
+[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 1.486548 ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                                      Load.resolveProject(bigdata-build-build) took 1.306732ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                                    Load.loadTransitive: finalizeProject(Project(id bigdata-build-build, base: /home/student/BigData/project/project, plugins: List(<none>))) took 3.403333ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in /home/student/BigData/project/project, returning: (bigdata-build-build)[0m
+[0m[[0m[0mdebug[0m] [0m[0m                                  Load.loadUnit: loadedProjectsRaw took 4.499949ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                                  Load.loadUnit: cleanEvalClasses took 0.014027ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                                Load.loadUnit(file:/home/student/BigData/project/project/, ...) took 21.99158ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.apply: load took 23.030305ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.apply: resolveProjects took 0.198034ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.apply: finalTransforms took 8.512012ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.apply: config.delegates took 0.485607ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.apply: Def.make(settings)... took 66.726409ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.apply: structureIndex took 17.912698ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.apply: mkStreams took 0.003988ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading project definition from /home/student/BigData/project/project[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0m                            Load.loadUnit: plugins took 258.082305ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                            Load.loadUnit: defsScala took 0.003426ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Scanning directory /home/student/BigData/project[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.loadUnit: mkEval took 0.327454ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Found non-root projects [0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in /home/student/BigData/project, returning: ()[0m
+[0m[[0m[0mdebug[0m] [0m[0mdeducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))[0m
+[0m[[0m[0mdebug[0m] [0m[0m  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)[0m
+[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 2.431873 ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading settings for project bigdata-build from build.sbt ...[0m
+[0m[[0m[0mdebug[0m] [0m[0m                                Load.resolveProject(bigdata-build) took 1.953689ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.loadTransitive: finalizeProject(Project(id bigdata-build, base: /home/student/BigData/project, plugins: List(<none>))) took 5.133244ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in /home/student/BigData/project, returning: (bigdata-build)[0m
+[0m[[0m[0mdebug[0m] [0m[0m                            Load.loadUnit: loadedProjectsRaw took 29.895682ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                            Load.loadUnit: cleanEvalClasses took 1.061194ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                          Load.loadUnit(file:/home/student/BigData/project/, ...) took 290.695364ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: load took 292.355169ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: resolveProjects took 0.122091ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: finalTransforms took 9.323005ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: config.delegates took 0.435402ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: Def.make(settings)... took 81.531043ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: structureIndex took 23.688813ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: mkStreams took 0.003818ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading project definition from /home/student/BigData/project[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/student/BigData/project/target/scala-2.12/sbt-1.0/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:94:37: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "populationInThousands" -> parseFloat(row(4)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:95:19: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "gdp" -> parseFloat(row(7)),[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:96:28: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "gdpPerCapita" -> parseFloat(row(9)),[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:97:28: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "unemployment" -> parseFloat(row(16)),[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:98:33: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "labourForceGender" -> parseFloat(row(17)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:99:35: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "popGrowthRateAnnual" -> parseFloat(row(24)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:100:24: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "urbanPop" -> parseFloat(row(25)),[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:101:30: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "urbanPopGrowth" -> parseFloat(row(26)),[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:102:38: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "healthTotalExpenditure" -> parseFloat(row(32)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:103:41: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "educationTotalExpenditure" -> parseFloat(row(34)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:105:34: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "qualityOfLifeIndex" -> parseFloat(row(50)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:106:36: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "purchasingPowerIndex" -> parseFloat(row(51)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:107:27: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "safetyIndex" -> parseFloat(row(52)),[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:108:31: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "healthCareIndex" -> parseFloat(row(53)),[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:109:40: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "propertyPriceIncomeRatio" -> parseFloat(row(55)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:110:34: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "affordabilityIndex" -> parseFloat(row(64)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:111:33: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "costOfLivingIndex" -> parseFloat(row(65)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:112:41: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "costOfLivingPlusRentIndex" -> parseFloat(row(67)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:113:30: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "lifeExpectancy" -> parseFloat(row(89)),[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:114:35: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "militaryExpenditure" -> parseFloat(row(90)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:115:26: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (String, Option[Float])[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.mongodb.scala.bson.BsonMagnets.CanBeBsonElement[0m
+[0m[[0m[31merror[0m] [0m[0m            "taxRevenue" -> parseFloat(row(93))[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m21 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(loadFailed, None, None)[0m
+[0m[[0m[33mwarn[0m] [0m[0mProject loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)[0m

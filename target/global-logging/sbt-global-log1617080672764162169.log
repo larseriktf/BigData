@@ -1,0 +1,123 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reload, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtStashOnFailure, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(onFailure loadFailed, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(loadp, None, None)[0m
+[0m[[0m[0minfo[0m] [0m[0mwelcome to sbt 1.5.5 (Ubuntu Java 11.0.11)[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.defaultLoad until apply took 1.415928ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                            Load.loadUnit: plugins took 16.050787ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                            Load.loadUnit: defsScala took 0.00527ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Scanning directory /home/student/BigData/project/project[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Found non-root projects [0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in /home/student/BigData/project/project, returning: ()[0m
+[0m[[0m[0mdebug[0m] [0m[0mdeducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))[0m
+[0m[[0m[0mdebug[0m] [0m[0m  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)[0m
+[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 1.573594 ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                                Load.resolveProject(bigdata-build-build) took 3.840301ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                              Load.loadTransitive: finalizeProject(Project(id bigdata-build-build, base: /home/student/BigData/project/project, plugins: List(<none>))) took 5.970325ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in /home/student/BigData/project/project, returning: (bigdata-build-build)[0m
+[0m[[0m[0mdebug[0m] [0m[0m                            Load.loadUnit: loadedProjectsRaw took 7.02611ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                            Load.loadUnit: cleanEvalClasses took 0.016311ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                          Load.loadUnit(file:/home/student/BigData/project/project/, ...) took 23.54451ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: load took 24.581731ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: resolveProjects took 0.138491ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: finalTransforms took 7.474197ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: config.delegates took 0.400456ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: Def.make(settings)... took 71.27503ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: structureIndex took 18.185709ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.apply: mkStreams took 0.003987ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading project definition from /home/student/BigData/project/project[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0m                      Load.loadUnit: plugins took 244.996378ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                      Load.loadUnit: defsScala took 0.008787ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Scanning directory /home/student/BigData/project[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.loadUnit: mkEval took 0.236256ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Found non-root projects [0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in /home/student/BigData/project, returning: ()[0m
+[0m[[0m[0mdebug[0m] [0m[0mdeducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))[0m
+[0m[[0m[0mdebug[0m] [0m[0m  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)[0m
+[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 1.400449 ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading settings for project bigdata-build from build.sbt ...[0m
+[0m[[0m[0mdebug[0m] [0m[0m                          Load.resolveProject(bigdata-build) took 2.293094ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                        Load.loadTransitive: finalizeProject(Project(id bigdata-build, base: /home/student/BigData/project, plugins: List(<none>))) took 4.274932ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in /home/student/BigData/project, returning: (bigdata-build)[0m
+[0m[[0m[0mdebug[0m] [0m[0m                      Load.loadUnit: loadedProjectsRaw took 22.017778ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                      Load.loadUnit: cleanEvalClasses took 0.619148ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                    Load.loadUnit(file:/home/student/BigData/project/, ...) took 268.373441ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.apply: load took 269.496229ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.apply: resolveProjects took 0.144583ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.apply: finalTransforms took 10.936338ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.apply: config.delegates took 0.498721ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.apply: Def.make(settings)... took 67.992491ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.apply: structureIndex took 15.940785ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m                  Load.apply: mkStreams took 0.004468ms[0m
+[0m[[0m[0minfo[0m] [0m[0mloading project definition from /home/student/BigData/project[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to /home/student/BigData/project/target/scala-2.12/sbt-1.0/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:10:8: object * is not a member of package com.mongodb[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.mongodb.*;[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:11:8: object MongoClients is not a member of package com.mongodb.client[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.mongodb.client.MongoClients;[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:12:8: object MongoClient is not a member of package com.mongodb.client[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.mongodb.client.MongoClient;[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:13:8: object MongoCollection is not a member of package com.mongodb.client[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.mongodb.client.MongoCollection;[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:14:8: object MongoDatabase is not a member of package com.mongodb.client[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.mongodb.client.MongoDatabase;[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:18:8: object * is not a member of package com.mongodb.client.result[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.mongodb.client.result.*;[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:72:33: not found: value Await[0m
+[0m[[0m[31merror[0m] [0m[0m        def results(): Seq[C] = Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:72:69: not found: value Duration[0m
+[0m[[0m[31merror[0m] [0m[0m        def results(): Seq[C] = Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:72:82: not found: value TimeUnit[0m
+[0m[[0m[31merror[0m] [0m[0m        def results(): Seq[C] = Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:73:28: not found: value Await[0m
+[0m[[0m[31merror[0m] [0m[0m        def headResult() = Await.result(observable.head(), Duration(10, TimeUnit.SECONDS))[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:73:60: not found: value Duration[0m
+[0m[[0m[31merror[0m] [0m[0m        def headResult() = Await.result(observable.head(), Duration(10, TimeUnit.SECONDS))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:73:73: not found: value TimeUnit[0m
+[0m[[0m[31merror[0m] [0m[0m        def headResult() = Await.result(observable.head(), Duration(10, TimeUnit.SECONDS))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:88:27: not found: value ArrayBuffer[0m
+[0m[[0m[31merror[0m] [0m[0m    val countryProfiles = ArrayBuffer[Document]();[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/MongoGetPostSocioEcons.scala:92:24: class org.bson.Document is not a value[0m
+[0m[[0m[31merror[0m] [0m[0m        val document = Document([0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m14 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(loadFailed, None, None)[0m
+[0m[[0m[33mwarn[0m] [0m[0mProject loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)[0m
