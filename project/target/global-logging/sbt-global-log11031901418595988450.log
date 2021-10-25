@@ -1,0 +1,18 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(067d89eb-a2a8-417d-a3dc-3a7bafbfccba), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/student/BigData/project/target/scala-2.12/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/GetHighestTaxesBasedOnGDP.scala:50:59: value / is not a member of String[0m
+[0m[[0m[31merror[0m] [0m[0m        group("country", "score" -> "gdp" * ("taxRevenue" / 100)), [0m
+[0m[[0m[31merror[0m] [0m[0m                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/student/BigData/project/GetHighestTaxesBasedOnGDP.scala:51:12: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : org.mongodb.scala.bson.conversions.Bson[0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  org.bson.conversions.Bson[0m
+[0m[[0m[31merror[0m] [0m[0m required: Seq[org.mongodb.scala.bson.conversions.Bson][0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  Seq[org.bson.conversions.Bson][0m
+[0m[[0m[31merror[0m] [0m[0m        out("countryTax"))[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed Oct 25, 2021, 9:09:47 AM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

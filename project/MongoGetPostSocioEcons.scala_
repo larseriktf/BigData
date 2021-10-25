@@ -1,0 +1,164 @@
+import org.mongodb.scala._
+import org.mongodb.scala.model.Aggregates._
+import org.mongodb.scala.model.Filters._
+import org.mongodb.scala.model.Projections._
+import org.mongodb.scala.model.Sorts._
+import org.mongodb.scala.model.Updates._
+import org.mongodb.scala.model.UpdateOptions
+import org.mongodb.scala.model._
+import scala.concurrent.Await
+import scala.concurrent.duration.Duration
+import scala.collection.JavaConverters._
+import org.mongodb.scala.bson.BsonObjectId
+import java.io._
+
+
+import java.util.List
+import java.util.Arrays
+import java.util.ArrayList
+import java.util.concurrent.TimeUnit
+
+/*
+case class CountryProfile(
+    country: String
+    populationInThousands: Float
+    gdp: Float // line7
+    gdpPerCapita: Float //line9
+    unemployment: Float //percentage of population / line16
+    labourForceGender: Float //percentage labour force participation by gender female%/male%
+    //gender- line17
+    popGrowthRateAnnual: Float //percentage line24
+    urbanPop: Float //percentage line25
+    urbanPopGrowth: Float //percent avg annual line26
+    healthTotalExpenditure: Float //percent of GDP line32
+    educationTotalExpenditure: Float //percent of GDP line 34
+    internetUsersPerOneHundred: Int //line 41
+    qualityOfLifeIndex: Float //line50
+    purchasingPowerIndex: Float //line51
+    safetyIndex: Float //line52
+    healthCareIndex: Float //line53
+    
+    propertyPriceIncomeRatio: Float //line55
+    affordabilityIndex: Float //line64
+    costOfLivingIndex: Float //line65
+    costOfLivingPlusRentIndex: Float //line67
+    lifeExpectancy: Float //line89
+    militaryExpenditure: Float //line90
+    taxRevenue: Float //% of GDP line93
+
+)
+*/
+object MongoGetPostSocioEcons extends App {
+    implicit class DocumentObservable[C](val observable: Observable[Document]) extends ImplicitObservable[Document] {
+        override val converter: (Document) => String = (doc) => doc.toJson
+    }
+
+    implicit class GenericObservable[C](val observable: Observable[C]) extends ImplicitObservable[C] {
+        override val converter: (C) => String = (doc) => doc.toString
+    }
+
+    
+
+    trait ImplicitObservable[C] {
+        val observable: Observable[C]
+
+        val converter: (C) => String
+        def results(): Seq[C] = Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
+        def headResult() = Await.result(observable.head(), Duration(10, TimeUnit.SECONDS))
+        def printResults(initial: String = ""): Unit = {
+            if (initial.length > 0) print(initial)
+            results.foreach(res => println(converter(res)))
+        }
+        def printHeadResult(initial: String = ""): Unit = println(s"${initial}${converter(headResult())}")
+    }
+
+    val mongoClient: MongoClient = MongoClient();
+    val database: MongoDatabase = mongoClient.getDatabase("soci_econ_country_profiles");
+    val collection: MongoCollection[Document] = database.getCollection("countryProfiles");
+
+    val source = io.Source.fromFile("datasets/soci_econ_country_profiles.csv");
+    //val lines = source.getLines().map(line => line.split(",")).drop(1);
+
+    //val countryProfiles = new ArrayList[Document]();
+
+    source.getLines.drop(1).foreach { line =>
+        val row = line.split(",").map(_.trim)
+
+        def parseFloat(value : String) : Option[Float] = if (value == "") None else 
+        Some(value.toFloat)
+
+        def parseInt(value : String) : Option[Int] = if (value == "") None else
+        Some(value.toInt)
+        
+        def isEmpty( input : Option[String]) : Boolean = 
+            input match {
+            case None    => true
+            case Some(s) => s.trim.isEmpty
+        }
+
+        //parses incorrect values to a nothing or something value
+        def isWrongData(value : String) : Option[Double] = if (value == "~0.0" || value == "-~0.0" || value == "...") None else
+        Some(value.toDouble)
+        
+        val document = Document(
+            "country" -> row(1),
+            "populationInThousands" -> row(4).toDouble,
+            "gdp" -> row(7).toDouble,
+            "gdpPerCapita" -> row(9).toDouble,
+            "unemployment" -> row(16).toDouble,
+            "labourForceGender" -> row(17),
+            "popGrowthRateAnnual" -> isWrongData(row(24)),
+            "urbanPop" -> isWrongData(row(25)),
+            "urbanPopGrowth" -> isWrongData(row(26)),
+            "healthTotalExpenditure" -> row(32).toDouble,
+            "educationTotalExpenditure" -> isWrongData(row(34)),
+            "internetUsersPerOneHundred" -> row(41).toDouble,
+            "qualityOfLifeIndex" -> row(50).toDouble,
+            "purchasingPowerIndex" -> row(51).toDouble,
+            "safetyIndex" -> row(52).toDouble,
+            "healthCareIndex" -> row(53).toDouble,
+            "propertyPriceIncomeRatio" -> row(55).toDouble,
+            "affordabilityIndex" -> row(64).toDouble,
+            "costOfLivingIndex" -> row(65).toDouble,
+            "costOfLivingPlusRentIndex" -> row(67).toDouble,
+            "lifeExpectancy" -> row(89).toDouble,
+            "militaryExpenditure" -> {if (!row(90).isEmpty) row(90).toDouble else 0},
+            "taxRevenue" -> {if (!row(93).isEmpty) row(93).toDouble else 0}
+        ); 
+        collection.insertOne(document).results();
+    }
+    
+    
+    
+        /*
+        val countryProfile = CountryProfile(
+            line(1).toString,
+            line(4),
+            line(7),
+            line(9),
+            line(16),
+            line(17),
+            line(24),
+            line(25),
+            line(26),
+            line(32),
+            line(34),
+            line(41).toInt,
+            line(50),
+            line(51),
+            line(52),
+            line(53),
+            line(55),
+            line(64),
+            line(65),
+            line(67),
+            line(89),
+            line(90),
+            line(93)
+        );
+        countryProfiles += countryProfile;
+    });
+*/
+//collection.find().printResults();
+    println("All documents inserted")
+}

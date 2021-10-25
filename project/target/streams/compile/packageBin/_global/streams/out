@@ -1,29 +1,15 @@
-[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/student/Documents/BigData/project/target/scala-2.12/project_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/student/BigData/project/target/scala-2.12/project_2.12-0.1.0-SNAPSHOT.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Node$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/Node$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AvgGradesByParentEdu$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AvgGradesByParentEdu$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	HttpGetPostTest$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/HttpGetPostTest$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Node.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/Node.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AvgGradesByParentEdu.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AvgGradesByParentEdu.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	NodeResponse$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/NodeResponse$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AvgGrades$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AvgGrades$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	NodeResponse.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/NodeResponse.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AvgGrades.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/AvgGrades.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	HttpGetPostTest$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/HttpGetPostTest$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Message.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/Message.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Message$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/Message$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	HttpGetPostTest.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/Documents/BigData/project/target/scala-2.12/classes/HttpGetPostTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PostANewCountryProfile$GenericObservable.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/BigData/project/target/scala-2.12/classes/PostANewCountryProfile$GenericObservable.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PostANewCountryProfile$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/BigData/project/target/scala-2.12/classes/PostANewCountryProfile$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PostANewCountryProfile.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/BigData/project/target/scala-2.12/classes/PostANewCountryProfile.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PostANewCountryProfile$DocumentObservable.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/BigData/project/target/scala-2.12/classes/PostANewCountryProfile$DocumentObservable.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PostANewCountryProfile$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/BigData/project/target/scala-2.12/classes/PostANewCountryProfile$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PostANewCountryProfile$ImplicitObservable.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/student/BigData/project/target/scala-2.12/classes/PostANewCountryProfile$ImplicitObservable.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
