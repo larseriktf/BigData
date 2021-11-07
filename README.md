@@ -2,7 +2,15 @@
 
 ## Key-Value Store
 
+Student Performance Dataset
+
+https://www.kaggle.com/larsen0966/student-performance-data-set
+
 ## Document Database
+
+Socio-Economic Country Profiles
+
+https://www.kaggle.com/nishanthsalian/socioeconomic-country-profiles
 
 ## Column Database
 
