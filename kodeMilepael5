@@ -1,0 +1,86 @@
+	import org.apache.spark.sql.types._
+val customSchema = StructType(Array(StructField("country",StringType, true),
+StructField("Population in thousands (2017)", IntegerType, true),
+StructField("GDP: Gross domestic product (million current US$)", DoubleType, true),
+StructField("GDP per capita (current US$)", DoubleType, true),
+StructField("Unemployment (% of labour force)", DoubleType, true),
+StructField("Population growth rate (average annual %)", DoubleType, true),
+StructField("Urban population (% of total population)_x", DoubleType, true),
+StructField("Urban population growth rate (average annual %)", DoubleType, true),
+StructField("Health: Total expenditure (% of GDP)", DoubleType, true),
+StructField("Education: Government expenditure (% of GDP)", DoubleType, true),
+StructField("Individuals using the Internet (per 100 inhabitants)", IntegerType, true),
+StructField("Quality Of Life Index", DoubleType, true),
+StructField("Purchasing Power Index", DoubleType, true),
+StructField("Safety Index", DoubleType, true),
+StructField("Health Care Index", DoubleType,true),
+StructField("Property price to income ratio", DoubleType,true),
+StructField("Affordability Index", DoubleType, true),
+StructField("Cost Of Living Index", DoubleType, true),
+StructField("Cost Of Living Plus Rent Index", DoubleType, true),
+StructField("Life expectancy at birth, total (years)", DoubleType, true),
+StructField("Military expenditure (% of GDP)", DoubleType, true)))
+
+
+myDf.select("country", "Population in thousands (2017)", "GDP: Gross domestic product (million current US$)","GDP per capita (current US$)","Unemployment (% of labour force)","Population growth rate (average annual %)","Urban population (% of total population)_x","Urban population growth rate (average annual %)","Health: Total expenditure (% of GDP)","Education: Government expenditure (% of GDP)","Individuals using the Internet (per 100 inhabitants)","Quality Of Life Index","Purchasing Power Index","Safety Index","Health Care Index","Property price to income ratio","Affordability Index","Cost Of Living Index","Cost Of Living Plus Rent Index","Life expectancy at birth, total (years)","Military expenditure (% of GDP)" Tax revenue (% of GDP),").as("Country Stats").printSchema()
+
+
+val oldCol = Seq("country", "Population in thousands (2017)", "GDP: Gross domestic product (million current US$)","GDP per capita (current US$)","Unemployment (% of labour force)","Population growth rate (average annual %)","Urban population (% of total population)_x","Urban population growth rate (average annual %)","Health: Total expenditure (% of GDP)","Education: Government expenditure (% of GDP)","Individuals using the Internet (per 100 inhabitants)","Quality Of Life Index","Purchasing Power Index","Safety Index","Health Care Index","Property price to income ratio","Affordability Index","Cost Of Living Index","Cost Of Living Plus Rent Index","Life expectancy at birth, total (years)","Military expenditure (% of GDP)", "Tax revenue (% of GDP)" )
+
+
+val newCol = Seq("country", "population", "gdp", "gdpPerCapita","unemployment", "populationGrowthRate", "urbanPop","urbanPopGrowth", "healthTotal", "educationTotal", "internetUsers", "qualityOfLifeI", "PPI", "safetyI", "HealthI", "propPriceToIncome","affordabilityI", "costI", "costPlusRentI", "lifeExpectancy", "militaryTotal", "taxes")
+
+
+
+val list = oldCol.zip(newCol).map(f=>{col(f._1).as(f._2)})
+val newDF = countryDF.select(list:_*)
+
+
+
+newDF.write.format("parquet").mode("errorIfExists").option("header", true).save("country-profiles.parquet")
+
+newDF.write.format("csv").mode("overwrite").option("header", true).save("country-profiles.csv")
+
+val myDf = spark.read.format("parquet").option("header",true).load("country-profiles.parquet")
+val myDF = spark.read.parquet("country-profiles.parquet")
+
+
+val agg = myDf.sort(desc("taxes")).select("country", "taxes").as("Taxes in % of GDP")
+agg.toDF()
+res24.write.format("csv").option("header","true").mode("overwrite").save("country-gdp.csv")
+
+
+
+
+val thisTemp = PDF.select(col("country"),  expr("(costPlusRentI / 100) * gdp as RealCost ")).sort(desc("RealCost"))
+
+
+
+
+val customSchema = new StructType().add("Father", ArrayType(new StructType().add("Fedu", IntegerType).add("First",DoubleType).add("Second", DoubleType).add("Third", DoubleType))).add("Mother", ArrayType(new StructType().add("Medu", IntegerType).add("First",DoubleType).add("Second", DoubleType).add("Third", DoubleType)))
+
+val result1 = myDf.groupBy("Fedu").agg(expr(" avg(G1) as FirstYear"), expr( " avg(G2) as SecondYear"),expr( " avg(G3) as ThirdYear"))
+
+val result2 = myDf.groupBy("Medu").agg(expr(" avg(G1) as FirstYear"), expr( " avg(G2) as SecondYear"),expr( " avg(G3) as ThirdYear"))
+
+val joined = result1.joinWith(result2, result1("Fedu") === result2("Medu"))
+
+val temp = joined.selectExpr("_1 as Father, "_2 as Mother")
+
+val temp2 = temp.select(col("Father.*"),col("Mother.*"))
+
+val flattenTemp = temp2.toDF("FatherEdu","FFirstYear","FSecondYear","FThirdYear", "MotherEdu","MFirstYear","MSecondYear","MThirdYear")
+flattenTemp.write.format("csv").option("header","true").mode("overwrite").save("grades-average.csv")
+
+val temp = PDF.groupBy("studytime").agg(expr(" avg(G1) as FirstYear"), expr( " avg(G2) as SecondYear"),expr( " avg(G3) as ThirdYear"))
+
+val setString = udf {(freetime: Integer) => if(freetime == 1) "Very little" else if(freetime == 2) "Little" else if(freetime == 3) "Medium" else if(freetime == 4) "Much" else "Very Much"} 
+val temp2 = temp.withColumn("freetime", setString(temp("freetime")))
+
+temp2.write.format("csv").option("header","true").mode("overwrite").save("freetime-grades.csv")
+
+
+
+
+
+
