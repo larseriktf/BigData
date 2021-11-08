@@ -1,0 +1,993 @@
+year,government,countries
+1950.0,Dominant Party,175
+1950.0,Foreign/Occupied,24
+1950.0,Indirect Military,12
+1950.0,Military,9
+1950.0,Military-Personal,39
+1950.0,Monarchy,144
+1950.0,Oligarchy,36
+1950.0,Parliamentary Democracy,304
+1950.0,Party-Military,4
+1950.0,Party-Personal,48
+1950.0,Personal Dictatorship,92
+1950.0,Presidential Democracy,125
+1951.0,Dominant Party,169
+1951.0,Foreign/Occupied,16
+1951.0,Indirect Military,10
+1951.0,Military,10
+1951.0,Military-Personal,36
+1951.0,Monarchy,149
+1951.0,Oligarchy,30
+1951.0,Parliamentary Democracy,315
+1951.0,Party-Military,12
+1951.0,Party-Personal,48
+1951.0,Personal Dictatorship,93
+1951.0,Presidential Democracy,118
+1951.0,Provisional - Military,8
+1952.0,Dominant Party,179
+1952.0,Foreign/Occupied,12
+1952.0,Military,17
+1952.0,Military-Personal,36
+1952.0,Monarchy,162
+1952.0,Oligarchy,24
+1952.0,Parliamentary Democracy,322
+1952.0,Party-Military,12
+1952.0,Party-Personal,48
+1952.0,Party-Personal-Military Hybrid,9
+1952.0,Personal Dictatorship,106
+1952.0,Presidential Democracy,100
+1952.0,Provisional - Military,10
+1953.0,Dominant Party,177
+1953.0,Foreign/Occupied,13
+1953.0,Military,12
+1953.0,Military-Personal,43
+1953.0,Monarchy,162
+1953.0,Oligarchy,25
+1953.0,Parliamentary Democracy,318
+1953.0,Party-Military,12
+1953.0,Party-Personal,48
+1953.0,Party-Personal-Military Hybrid,24
+1953.0,Personal Dictatorship,108
+1953.0,Presidential Democracy,99
+1954.0,Dominant Party,161
+1954.0,Foreign/Occupied,12
+1954.0,Military,4
+1954.0,Military-Personal,48
+1954.0,Monarchy,168
+1954.0,Oligarchy,24
+1954.0,Parliamentary Democracy,321
+1954.0,Party-Military,12
+1954.0,Party-Personal,47
+1954.0,Party-Personal-Military Hybrid,34
+1954.0,Personal Dictatorship,130
+1954.0,Presidential Democracy,102
+1955.0,Dominant Party,168
+1955.0,Foreign/Occupied,9
+1955.0,Military,5
+1955.0,Military-Personal,48
+1955.0,Monarchy,169
+1955.0,Oligarchy,25
+1955.0,Parliamentary Democracy,334
+1955.0,Party-Military,12
+1955.0,Party-Personal,36
+1955.0,Party-Personal-Military Hybrid,26
+1955.0,Personal Dictatorship,141
+1955.0,Presidential Democracy,99
+1956.0,Dominant Party,176
+1956.0,Military,12
+1956.0,Military-Personal,41
+1956.0,Monarchy,189
+1956.0,Oligarchy,25
+1956.0,Parliamentary Democracy,358
+1956.0,Party-Military,13
+1956.0,Party-Personal,36
+1956.0,Party-Personal-Military Hybrid,24
+1956.0,Personal Dictatorship,131
+1956.0,Presidential Democracy,106
+1956.0,Provisional - Military,4
+1957.0,Dominant Party,183
+1957.0,Military,18
+1957.0,Military-Personal,39
+1957.0,Monarchy,187
+1957.0,Oligarchy,26
+1957.0,Parliamentary Democracy,368
+1957.0,Party-Military,12
+1957.0,Party-Personal,36
+1957.0,Party-Personal-Military Hybrid,24
+1957.0,Personal Dictatorship,122
+1957.0,Presidential Democracy,100
+1957.0,Provisional - Military,23
+1958.0,Dominant Party,208
+1958.0,Foreign/Occupied,11
+1958.0,Indirect Military,12
+1958.0,Military,11
+1958.0,Military-Personal,21
+1958.0,Monarchy,175
+1958.0,Oligarchy,24
+1958.0,Parliamentary Democracy,350
+1958.0,Party-Military,12
+1958.0,Party-Personal,36
+1958.0,Party-Personal-Military Hybrid,24
+1958.0,Personal Dictatorship,126
+1958.0,Presidential Democracy,136
+1959.0,Dominant Party,218
+1959.0,Foreign/Occupied,12
+1959.0,Indirect Military,12
+1959.0,Military,24
+1959.0,Military-Personal,24
+1959.0,Monarchy,168
+1959.0,Oligarchy,12
+1959.0,Parliamentary Democracy,318
+1959.0,Party-Military,12
+1959.0,Party-Personal,48
+1959.0,Party-Personal-Military Hybrid,24
+1959.0,Personal Dictatorship,122
+1959.0,Presidential Democracy,146
+1960.0,Dominant Party,232
+1960.0,Foreign/Occupied,17
+1960.0,Indirect Military,16
+1960.0,Military,24
+1960.0,Military-Personal,24
+1960.0,Monarchy,168
+1960.0,Oligarchy,12
+1960.0,Parliamentary Democracy,338
+1960.0,Party-Military,10
+1960.0,Party-Personal,79
+1960.0,Party-Personal-Military Hybrid,24
+1960.0,Personal Dictatorship,157
+1960.0,Presidential Democracy,154
+1961.0,Dominant Party,255
+1961.0,Foreign/Occupied,26
+1961.0,Indirect Military,24
+1961.0,Military,43
+1961.0,Military-Personal,24
+1961.0,Monarchy,169
+1961.0,Oligarchy,12
+1961.0,Parliamentary Democracy,346
+1961.0,Party-Personal,96
+1961.0,Party-Personal-Military Hybrid,24
+1961.0,Personal Dictatorship,190
+1961.0,Presidential Democracy,170
+1961.0,Provisional - Civilian,1
+1962.0,Dominant Party,264
+1962.0,Foreign/Occupied,27
+1962.0,Indirect Military,36
+1962.0,Military,29
+1962.0,Military-Personal,34
+1962.0,Monarchy,172
+1962.0,Oligarchy,12
+1962.0,Parliamentary Democracy,389
+1962.0,Party-Military,20
+1962.0,Party-Personal,96
+1962.0,Party-Personal-Military Hybrid,24
+1962.0,Personal Dictatorship,175
+1962.0,Presidential Democracy,154
+1962.0,Provisional - Civilian,1
+1962.0,Provisional - Military,6
+1962.0,Warlordism,6
+1963.0,Dominant Party,265
+1963.0,Foreign/Occupied,14
+1963.0,Indirect Military,28
+1963.0,Military,59
+1963.0,Military-Personal,37
+1963.0,Monarchy,169
+1963.0,Oligarchy,12
+1963.0,Parliamentary Democracy,403
+1963.0,Party-Military,27
+1963.0,Party-Personal,101
+1963.0,Party-Personal-Military Hybrid,35
+1963.0,Personal Dictatorship,158
+1963.0,Presidential Democracy,173
+1963.0,Provisional - Military,6
+1963.0,Warlordism,12
+1964.0,Dominant Party,289
+1964.0,Foreign/Occupied,12
+1964.0,Indirect Military,24
+1964.0,Military,92
+1964.0,Military-Personal,36
+1964.0,Monarchy,169
+1964.0,Oligarchy,12
+1964.0,Parliamentary Democracy,383
+1964.0,Party-Military,36
+1964.0,Party-Personal,108
+1964.0,Party-Personal-Military Hybrid,36
+1964.0,Personal Dictatorship,129
+1964.0,Presidential Democracy,165
+1964.0,Provisional - Civilian,4
+1964.0,Provisional - Military,12
+1964.0,Warlordism,13
+1965.0,Dominant Party,304
+1965.0,Foreign/Occupied,22
+1965.0,Indirect Military,23
+1965.0,Military,82
+1965.0,Military-Personal,36
+1965.0,Monarchy,170
+1965.0,Oligarchy,14
+1965.0,Parliamentary Democracy,387
+1965.0,Party-Military,37
+1965.0,Party-Personal,109
+1965.0,Party-Personal-Military Hybrid,36
+1965.0,Personal Dictatorship,152
+1965.0,Presidential Democracy,158
+1965.0,Provisional - Civilian,6
+1965.0,Provisional - Military,11
+1965.0,Warlordism,12
+1966.0,Dominant Party,324
+1966.0,Foreign/Occupied,19
+1966.0,Indirect Military,15
+1966.0,Military,110
+1966.0,Military-Personal,36
+1966.0,Monarchy,163
+1966.0,Oligarchy,26
+1966.0,Parliamentary Democracy,378
+1966.0,Party-Military,43
+1966.0,Party-Personal,98
+1966.0,Party-Personal-Military Hybrid,47
+1966.0,Personal Dictatorship,168
+1966.0,Presidential Democracy,159
+1966.0,Provisional - Civilian,11
+1966.0,Warlordism,12
+1967.0,Dominant Party,338
+1967.0,Foreign/Occupied,12
+1967.0,Indirect Military,12
+1967.0,Military,129
+1967.0,Military-Personal,36
+1967.0,Monarchy,161
+1967.0,Oligarchy,24
+1967.0,Parliamentary Democracy,371
+1967.0,Party-Military,49
+1967.0,Party-Personal,97
+1967.0,Party-Personal-Military Hybrid,48
+1967.0,Personal Dictatorship,173
+1967.0,Presidential Democracy,159
+1967.0,Provisional - Civilian,12
+1967.0,Warlordism,12
+1968.0,Dominant Party,359
+1968.0,Foreign/Occupied,12
+1968.0,Indirect Military,12
+1968.0,Military,116
+1968.0,Military-Personal,39
+1968.0,Monarchy,172
+1968.0,Oligarchy,24
+1968.0,Parliamentary Democracy,389
+1968.0,Party-Military,52
+1968.0,Party-Personal,99
+1968.0,Party-Personal-Military Hybrid,48
+1968.0,Personal Dictatorship,178
+1968.0,Presidential Democracy,158
+1968.0,Provisional - Civilian,9
+1968.0,Warlordism,12
+1969.0,Dominant Party,350
+1969.0,Foreign/Occupied,12
+1969.0,Indirect Military,12
+1969.0,Military,123
+1969.0,Military-Personal,49
+1969.0,Monarchy,177
+1969.0,Oligarchy,24
+1969.0,Parliamentary Democracy,383
+1969.0,Party-Military,61
+1969.0,Party-Personal,96
+1969.0,Party-Personal-Military Hybrid,48
+1969.0,Personal Dictatorship,193
+1969.0,Presidential Democracy,146
+1969.0,Provisional - Military,6
+1969.0,Warlordism,12
+1970.0,Dominant Party,366
+1970.0,Foreign/Occupied,12
+1970.0,Indirect Military,2
+1970.0,Military,120
+1970.0,Military-Personal,48
+1970.0,Monarchy,172
+1970.0,Oligarchy,24
+1970.0,Parliamentary Democracy,372
+1970.0,Party-Military,60
+1970.0,Party-Personal,96
+1970.0,Party-Personal-Military Hybrid,50
+1970.0,Personal Dictatorship,228
+1970.0,Presidential Democracy,128
+1970.0,Provisional - Civilian,8
+1970.0,Provisional - Military,7
+1970.0,Warlordism,12
+1971.0,Dominant Party,373
+1971.0,Foreign/Occupied,12
+1971.0,Military,105
+1971.0,Military-Personal,53
+1971.0,Monarchy,191
+1971.0,Oligarchy,24
+1971.0,Parliamentary Democracy,379
+1971.0,Party-Military,50
+1971.0,Party-Personal,106
+1971.0,Party-Personal-Military Hybrid,49
+1971.0,Personal Dictatorship,250
+1971.0,Presidential Democracy,123
+1971.0,Provisional - Civilian,12
+1971.0,Warlordism,12
+1972.0,Dominant Party,364
+1972.0,Foreign/Occupied,12
+1972.0,Military,129
+1972.0,Military-Personal,48
+1972.0,Monarchy,220
+1972.0,Oligarchy,24
+1972.0,Parliamentary Democracy,382
+1972.0,Party-Military,49
+1972.0,Party-Personal,109
+1972.0,Party-Personal-Military Hybrid,48
+1972.0,Personal Dictatorship,249
+1972.0,Presidential Democracy,117
+1972.0,Provisional - Civilian,11
+1972.0,Warlordism,12
+1973.0,Dominant Party,355
+1973.0,Foreign/Occupied,12
+1973.0,Military,142
+1973.0,Military-Personal,56
+1973.0,Monarchy,211
+1973.0,Oligarchy,24
+1973.0,Parliamentary Democracy,387
+1973.0,Party-Military,48
+1973.0,Party-Personal,108
+1973.0,Party-Personal-Military Hybrid,48
+1973.0,Personal Dictatorship,270
+1973.0,Presidential Democracy,99
+1973.0,Provisional - Civilian,3
+1973.0,Warlordism,12
+1974.0,Dominant Party,344
+1974.0,Foreign/Occupied,15
+1974.0,Military,148
+1974.0,Military-Personal,74
+1974.0,Monarchy,201
+1974.0,Oligarchy,24
+1974.0,Parliamentary Democracy,412
+1974.0,Party-Military,48
+1974.0,Party-Personal,108
+1974.0,Party-Personal-Military Hybrid,48
+1974.0,Personal Dictatorship,262
+1974.0,Presidential Democracy,91
+1974.0,Provisional - Civilian,22
+1974.0,Warlordism,12
+1975.0,Dominant Party,377
+1975.0,Foreign/Occupied,12
+1975.0,Military,139
+1975.0,Military-Personal,91
+1975.0,Monarchy,193
+1975.0,Oligarchy,24
+1975.0,Parliamentary Democracy,417
+1975.0,Party-Military,48
+1975.0,Party-Personal,100
+1975.0,Party-Personal-Military Hybrid,48
+1975.0,Personal Dictatorship,270
+1975.0,Presidential Democracy,84
+1975.0,Provisional - Civilian,18
+1975.0,Provisional - Military,6
+1975.0,Warlordism,10
+1976.0,Dominant Party,422
+1976.0,Foreign/Occupied,16
+1976.0,Military,133
+1976.0,Military-Personal,99
+1976.0,Monarchy,192
+1976.0,Oligarchy,24
+1976.0,Parliamentary Democracy,438
+1976.0,Party-Military,49
+1976.0,Party-Personal,84
+1976.0,Party-Personal-Military Hybrid,48
+1976.0,Personal Dictatorship,276
+1976.0,Presidential Democracy,81
+1976.0,Provisional - Civilian,14
+1976.0,Provisional - Military,13
+1977.0,Dominant Party,420
+1977.0,Foreign/Occupied,25
+1977.0,Military,133
+1977.0,Military-Personal,117
+1977.0,Monarchy,192
+1977.0,Oligarchy,24
+1977.0,Parliamentary Democracy,425
+1977.0,Party-Military,50
+1977.0,Party-Personal,84
+1977.0,Party-Personal-Military Hybrid,48
+1977.0,Personal Dictatorship,284
+1977.0,Presidential Democracy,85
+1977.0,Provisional - Military,12
+1978.0,Dominant Party,427
+1978.0,Foreign/Occupied,24
+1978.0,Military,129
+1978.0,Military-Personal,116
+1978.0,Monarchy,192
+1978.0,Oligarchy,25
+1978.0,Parliamentary Democracy,423
+1978.0,Party-Military,49
+1978.0,Party-Personal,93
+1978.0,Party-Personal-Military Hybrid,48
+1978.0,Personal Dictatorship,280
+1978.0,Presidential Democracy,95
+1978.0,Provisional - Civilian,7
+1978.0,Provisional - Military,12
+1979.0,Dominant Party,451
+1979.0,Foreign/Occupied,24
+1979.0,Military,102
+1979.0,Military-Personal,108
+1979.0,Monarchy,181
+1979.0,Oligarchy,17
+1979.0,Parliamentary Democracy,458
+1979.0,Party-Military,48
+1979.0,Party-Personal,93
+1979.0,Party-Personal-Military Hybrid,48
+1979.0,Personal Dictatorship,284
+1979.0,Presidential Democracy,127
+1979.0,Provisional - Civilian,33
+1979.0,Provisional - Military,7
+1979.0,Warlordism,10
+1980.0,Dominant Party,460
+1980.0,Foreign/Occupied,24
+1980.0,Indirect Military,11
+1980.0,Military,103
+1980.0,Military-Personal,108
+1980.0,Monarchy,180
+1980.0,Oligarchy,12
+1980.0,Parliamentary Democracy,471
+1980.0,Party-Military,36
+1980.0,Party-Personal,76
+1980.0,Party-Personal-Military Hybrid,48
+1980.0,Personal Dictatorship,288
+1980.0,Presidential Democracy,165
+1980.0,Provisional - Civilian,21
+1980.0,Warlordism,12
+1981.0,Dominant Party,447
+1981.0,Foreign/Occupied,24
+1981.0,Indirect Military,12
+1981.0,Military,123
+1981.0,Military-Personal,113
+1981.0,Monarchy,180
+1981.0,Oligarchy,12
+1981.0,Parliamentary Democracy,475
+1981.0,Party-Military,36
+1981.0,Party-Personal,72
+1981.0,Party-Personal-Military Hybrid,49
+1981.0,Personal Dictatorship,299
+1981.0,Presidential Democracy,186
+1981.0,Warlordism,12
+1982.0,Dominant Party,447
+1982.0,Foreign/Occupied,25
+1982.0,Indirect Military,20
+1982.0,Military,102
+1982.0,Military-Personal,121
+1982.0,Monarchy,182
+1982.0,Oligarchy,12
+1982.0,Parliamentary Democracy,510
+1982.0,Party-Military,36
+1982.0,Party-Personal,73
+1982.0,Party-Personal-Military Hybrid,48
+1982.0,Personal Dictatorship,310
+1982.0,Presidential Democracy,188
+1982.0,Warlordism,6
+1983.0,Dominant Party,445
+1983.0,Foreign/Occupied,27
+1983.0,Indirect Military,24
+1983.0,Military,71
+1983.0,Military-Personal,121
+1983.0,Monarchy,181
+1983.0,Oligarchy,12
+1983.0,Parliamentary Democracy,503
+1983.0,Party-Military,36
+1983.0,Party-Personal,67
+1983.0,Party-Personal-Military Hybrid,48
+1983.0,Personal Dictatorship,328
+1983.0,Presidential Democracy,197
+1983.0,Provisional - Civilian,1
+1984.0,Dominant Party,440
+1984.0,Foreign/Occupied,24
+1984.0,Indirect Military,25
+1984.0,Military,58
+1984.0,Military-Personal,120
+1984.0,Monarchy,180
+1984.0,Oligarchy,12
+1984.0,Parliamentary Democracy,518
+1984.0,Party-Military,36
+1984.0,Party-Personal,60
+1984.0,Party-Personal-Military Hybrid,48
+1984.0,Personal Dictatorship,334
+1984.0,Presidential Democracy,208
+1984.0,Provisional - Civilian,12
+1985.0,Dominant Party,439
+1985.0,Foreign/Occupied,24
+1985.0,Indirect Military,24
+1985.0,Military,37
+1985.0,Military-Personal,120
+1985.0,Monarchy,180
+1985.0,Oligarchy,12
+1985.0,Parliamentary Democracy,521
+1985.0,Party-Military,36
+1985.0,Party-Personal,60
+1985.0,Party-Personal-Military Hybrid,48
+1985.0,Personal Dictatorship,323
+1985.0,Presidential Democracy,233
+1985.0,Provisional - Military,9
+1985.0,Warlordism,6
+1986.0,Dominant Party,425
+1986.0,Foreign/Occupied,24
+1986.0,Indirect Military,36
+1986.0,Military,37
+1986.0,Military-Personal,120
+1986.0,Monarchy,181
+1986.0,Oligarchy,12
+1986.0,Parliamentary Democracy,538
+1986.0,Party-Military,36
+1986.0,Party-Personal,61
+1986.0,Party-Personal-Military Hybrid,48
+1986.0,Personal Dictatorship,304
+1986.0,Presidential Democracy,244
+1986.0,Provisional - Military,14
+1986.0,Warlordism,1
+1987.0,Dominant Party,414
+1987.0,Foreign/Occupied,24
+1987.0,Indirect Military,36
+1987.0,Military,33
+1987.0,Military-Personal,130
+1987.0,Monarchy,180
+1987.0,Oligarchy,12
+1987.0,Parliamentary Democracy,540
+1987.0,Party-Military,33
+1987.0,Party-Personal,60
+1987.0,Party-Personal-Military Hybrid,48
+1987.0,Personal Dictatorship,298
+1987.0,Presidential Democracy,247
+1987.0,Provisional - Civilian,3
+1987.0,Provisional - Military,12
+1988.0,Dominant Party,411
+1988.0,Foreign/Occupied,26
+1988.0,Indirect Military,25
+1988.0,Military,49
+1988.0,Military-Personal,128
+1988.0,Monarchy,180
+1988.0,Oligarchy,12
+1988.0,Parliamentary Democracy,556
+1988.0,Party-Military,24
+1988.0,Party-Personal,60
+1988.0,Party-Personal-Military Hybrid,48
+1988.0,Personal Dictatorship,288
+1988.0,Presidential Democracy,255
+1988.0,Provisional - Civilian,12
+1988.0,Provisional - Military,2
+1989.0,Dominant Party,409
+1989.0,Foreign/Occupied,26
+1989.0,Indirect Military,18
+1989.0,Military,48
+1989.0,Military-Personal,104
+1989.0,Monarchy,181
+1989.0,Oligarchy,15
+1989.0,Parliamentary Democracy,577
+1989.0,Party-Military,24
+1989.0,Party-Personal,60
+1989.0,Party-Personal-Military Hybrid,49
+1989.0,Personal Dictatorship,295
+1989.0,Presidential Democracy,273
+1989.0,Provisional - Civilian,16
+1990.0,Dominant Party,362
+1990.0,Foreign/Occupied,24
+1990.0,Indirect Military,12
+1990.0,Military,48
+1990.0,Military-Personal,63
+1990.0,Monarchy,182
+1990.0,Oligarchy,12
+1990.0,Parliamentary Democracy,616
+1990.0,Party-Military,24
+1990.0,Party-Personal,61
+1990.0,Party-Personal-Military Hybrid,48
+1990.0,Personal Dictatorship,300
+1990.0,Presidential Democracy,327
+1990.0,Provisional - Civilian,57
+1990.0,Provisional - Military,1
+1990.0,Warlordism,2
+1991.0,Dominant Party,327
+1991.0,Foreign/Occupied,24
+1991.0,Indirect Military,13
+1991.0,Military,63
+1991.0,Military-Personal,48
+1991.0,Monarchy,175
+1991.0,Oligarchy,12
+1991.0,Parliamentary Democracy,683
+1991.0,Party-Military,13
+1991.0,Party-Personal,79
+1991.0,Party-Personal-Military Hybrid,48
+1991.0,Personal Dictatorship,290
+1991.0,Presidential Democracy,348
+1991.0,Provisional - Civilian,46
+1991.0,Provisional - Military,19
+1991.0,Warlordism,12
+1992.0,Dominant Party,310
+1992.0,Foreign/Occupied,24
+1992.0,Indirect Military,12
+1992.0,Military,79
+1992.0,Military-Personal,38
+1992.0,Monarchy,168
+1992.0,Oligarchy,12
+1992.0,Parliamentary Democracy,761
+1992.0,Party-Military,1
+1992.0,Party-Personal,76
+1992.0,Party-Personal-Military Hybrid,48
+1992.0,Personal Dictatorship,319
+1992.0,Presidential Democracy,363
+1992.0,Provisional - Civilian,32
+1992.0,Provisional - Military,6
+1992.0,Warlordism,32
+1993.0,Dominant Party,303
+1993.0,Foreign/Occupied,25
+1993.0,Indirect Military,5
+1993.0,Military,53
+1993.0,Military-Personal,34
+1993.0,Monarchy,168
+1993.0,Oligarchy,12
+1993.0,Parliamentary Democracy,791
+1993.0,Party-Personal,80
+1993.0,Party-Personal-Military Hybrid,40
+1993.0,Personal Dictatorship,293
+1993.0,Presidential Democracy,435
+1993.0,Provisional - Civilian,23
+1993.0,Provisional - Military,4
+1993.0,Warlordism,36
+1994.0,Dominant Party,290
+1994.0,Foreign/Occupied,24
+1994.0,Military,35
+1994.0,Military-Personal,32
+1994.0,Monarchy,168
+1994.0,Oligarchy,3
+1994.0,Parliamentary Democracy,800
+1994.0,Party-Military,6
+1994.0,Party-Personal,85
+1994.0,Party-Personal-Military Hybrid,36
+1994.0,Personal Dictatorship,299
+1994.0,Presidential Democracy,469
+1994.0,Provisional - Civilian,24
+1994.0,Provisional - Military,6
+1994.0,Warlordism,37
+1995.0,Dominant Party,265
+1995.0,Foreign/Occupied,25
+1995.0,Military,24
+1995.0,Military-Personal,24
+1995.0,Monarchy,169
+1995.0,Parliamentary Democracy,799
+1995.0,Party-Military,12
+1995.0,Party-Personal,84
+1995.0,Party-Personal-Military Hybrid,36
+1995.0,Personal Dictatorship,300
+1995.0,Presidential Democracy,485
+1995.0,Provisional - Civilian,24
+1995.0,Provisional - Military,12
+1995.0,Warlordism,36
+1996.0,Dominant Party,276
+1996.0,Foreign/Occupied,36
+1996.0,Military,24
+1996.0,Military-Personal,22
+1996.0,Monarchy,169
+1996.0,Parliamentary Democracy,807
+1996.0,Party-Military,12
+1996.0,Party-Personal,84
+1996.0,Party-Personal-Military Hybrid,36
+1996.0,Personal Dictatorship,317
+1996.0,Presidential Democracy,488
+1996.0,Provisional - Civilian,14
+1996.0,Provisional - Military,7
+1996.0,Warlordism,22
+1997.0,Dominant Party,292
+1997.0,Foreign/Occupied,36
+1997.0,Military,24
+1997.0,Military-Personal,32
+1997.0,Monarchy,168
+1997.0,Parliamentary Democracy,805
+1997.0,Party-Military,12
+1997.0,Party-Personal,84
+1997.0,Party-Personal-Military Hybrid,36
+1997.0,Personal Dictatorship,335
+1997.0,Presidential Democracy,466
+1997.0,Provisional - Civilian,12
+1997.0,Warlordism,6
+1998.0,Dominant Party,290
+1998.0,Foreign/Occupied,38
+1998.0,Military,24
+1998.0,Military-Personal,18
+1998.0,Monarchy,169
+1998.0,Parliamentary Democracy,804
+1998.0,Party-Military,12
+1998.0,Party-Personal,84
+1998.0,Party-Personal-Military Hybrid,37
+1998.0,Personal Dictatorship,348
+1998.0,Presidential Democracy,461
+1998.0,Provisional - Civilian,13
+1998.0,Provisional - Military,9
+1999.0,Dominant Party,282
+1999.0,Foreign/Occupied,37
+1999.0,Military,25
+1999.0,Military-Personal,24
+1999.0,Monarchy,172
+1999.0,Parliamentary Democracy,804
+1999.0,Party-Military,12
+1999.0,Party-Personal,84
+1999.0,Party-Personal-Military Hybrid,29
+1999.0,Personal Dictatorship,348
+1999.0,Presidential Democracy,467
+1999.0,Provisional - Civilian,4
+1999.0,Provisional - Military,22
+2000.0,Dominant Party,260
+2000.0,Foreign/Occupied,38
+2000.0,Military,24
+2000.0,Military-Personal,36
+2000.0,Monarchy,170
+2000.0,Parliamentary Democracy,808
+2000.0,Party-Military,12
+2000.0,Party-Personal,82
+2000.0,Party-Personal-Military Hybrid,25
+2000.0,Personal Dictatorship,348
+2000.0,Presidential Democracy,503
+2000.0,Provisional - Civilian,2
+2000.0,Provisional - Military,2
+2001.0,Dominant Party,240
+2001.0,Foreign/Occupied,38
+2001.0,Military,24
+2001.0,Military-Personal,36
+2001.0,Monarchy,169
+2001.0,Parliamentary Democracy,826
+2001.0,Party-Military,12
+2001.0,Party-Personal,72
+2001.0,Party-Personal-Military Hybrid,24
+2001.0,Personal Dictatorship,338
+2001.0,Presidential Democracy,516
+2001.0,Provisional - Civilian,7
+2002.0,Dominant Party,229
+2002.0,Foreign/Occupied,50
+2002.0,Military,24
+2002.0,Military-Personal,38
+2002.0,Monarchy,172
+2002.0,Parliamentary Democracy,816
+2002.0,Party-Military,12
+2002.0,Party-Personal,72
+2002.0,Party-Personal-Military Hybrid,24
+2002.0,Personal Dictatorship,336
+2002.0,Presidential Democracy,534
+2003.0,Dominant Party,218
+2003.0,Foreign/Occupied,61
+2003.0,Military,24
+2003.0,Military-Personal,28
+2003.0,Monarchy,182
+2003.0,Parliamentary Democracy,809
+2003.0,Party-Military,12
+2003.0,Party-Personal,72
+2003.0,Party-Personal-Military Hybrid,24
+2003.0,Personal Dictatorship,335
+2003.0,Presidential Democracy,533
+2003.0,Provisional - Civilian,17
+2003.0,Provisional - Military,4
+2004.0,Dominant Party,218
+2004.0,Foreign/Occupied,63
+2004.0,Military,24
+2004.0,Military-Personal,24
+2004.0,Monarchy,183
+2004.0,Parliamentary Democracy,818
+2004.0,Party-Military,12
+2004.0,Party-Personal,72
+2004.0,Party-Personal-Military Hybrid,24
+2004.0,Personal Dictatorship,302
+2004.0,Presidential Democracy,534
+2004.0,Provisional - Civilian,36
+2004.0,Provisional - Military,12
+2005.0,Dominant Party,220
+2005.0,Foreign/Occupied,53
+2005.0,Military,24
+2005.0,Military-Personal,24
+2005.0,Monarchy,183
+2005.0,Parliamentary Democracy,813
+2005.0,Party-Military,12
+2005.0,Party-Personal,72
+2005.0,Party-Personal-Military Hybrid,24
+2005.0,Personal Dictatorship,301
+2005.0,Presidential Democracy,542
+2005.0,Provisional - Civilian,32
+2005.0,Provisional - Military,15
+2006.0,Dominant Party,217
+2006.0,Foreign/Occupied,51
+2006.0,Military,28
+2006.0,Military-Personal,18
+2006.0,Monarchy,176
+2006.0,Parliamentary Democracy,836
+2006.0,Party-Military,12
+2006.0,Party-Personal,73
+2006.0,Party-Personal-Military Hybrid,24
+2006.0,Personal Dictatorship,300
+2006.0,Presidential Democracy,575
+2006.0,Provisional - Civilian,6
+2006.0,Provisional - Military,12
+2007.0,Dominant Party,204
+2007.0,Foreign/Occupied,49
+2007.0,Military,47
+2007.0,Military-Personal,25
+2007.0,Monarchy,169
+2007.0,Parliamentary Democracy,822
+2007.0,Party-Military,12
+2007.0,Party-Personal,72
+2007.0,Party-Personal-Military Hybrid,24
+2007.0,Personal Dictatorship,300
+2007.0,Presidential Democracy,595
+2007.0,Provisional - Military,2
+2008.0,Dominant Party,206
+2008.0,Foreign/Occupied,55
+2008.0,Military,37
+2008.0,Military-Personal,20
+2008.0,Monarchy,160
+2008.0,Parliamentary Democracy,862
+2008.0,Party-Military,12
+2008.0,Party-Personal,73
+2008.0,Party-Personal-Military Hybrid,24
+2008.0,Personal Dictatorship,305
+2008.0,Presidential Democracy,593
+2009.0,Dominant Party,205
+2009.0,Foreign/Occupied,49
+2009.0,Military,38
+2009.0,Military-Personal,12
+2009.0,Monarchy,156
+2009.0,Parliamentary Democracy,885
+2009.0,Party-Military,12
+2009.0,Party-Personal,74
+2009.0,Party-Personal-Military Hybrid,24
+2009.0,Personal Dictatorship,300
+2009.0,Presidential Democracy,579
+2009.0,Provisional - Civilian,11
+2010.0,Dominant Party,204
+2010.0,Foreign/Occupied,50
+2010.0,Military,36
+2010.0,Military-Personal,12
+2010.0,Monarchy,157
+2010.0,Parliamentary Democracy,882
+2010.0,Party-Military,12
+2010.0,Party-Personal,72
+2010.0,Party-Personal-Military Hybrid,24
+2010.0,Personal Dictatorship,292
+2010.0,Presidential Democracy,566
+2010.0,Provisional - Civilian,21
+2010.0,Provisional - Military,11
+2011.0,Dominant Party,192
+2011.0,Foreign/Occupied,48
+2011.0,Military,15
+2011.0,Military-Personal,12
+2011.0,Monarchy,156
+2011.0,Parliamentary Democracy,892
+2011.0,Party-Military,22
+2011.0,Party-Personal,73
+2011.0,Party-Personal-Military Hybrid,14
+2011.0,Personal Dictatorship,282
+2011.0,Presidential Democracy,590
+2011.0,Provisional - Civilian,37
+2011.0,Provisional - Military,15
+2011.0,Warlordism,5
+2012.0,Dominant Party,194
+2012.0,Foreign/Occupied,38
+2012.0,Military,12
+2012.0,Military-Personal,12
+2012.0,Monarchy,156
+2012.0,Parliamentary Democracy,890
+2012.0,Party-Military,24
+2012.0,Party-Personal,72
+2012.0,Party-Personal-Military Hybrid,12
+2012.0,Personal Dictatorship,277
+2012.0,Presidential Democracy,608
+2012.0,Provisional - Civilian,40
+2012.0,Provisional - Military,8
+2012.0,Warlordism,13
+2013.0,Dominant Party,193
+2013.0,Foreign/Occupied,38
+2013.0,Military,12
+2013.0,Military-Personal,12
+2013.0,Monarchy,157
+2013.0,Parliamentary Democracy,899
+2013.0,Party-Military,24
+2013.0,Party-Personal,72
+2013.0,Party-Personal-Military Hybrid,12
+2013.0,Personal Dictatorship,268
+2013.0,Presidential Democracy,605
+2013.0,Provisional - Civilian,55
+2013.0,Provisional - Military,6
+2013.0,Warlordism,14
+2014.0,Dominant Party,192
+2014.0,Foreign/Occupied,35
+2014.0,Military,20
+2014.0,Military-Personal,12
+2014.0,Monarchy,157
+2014.0,Parliamentary Democracy,893
+2014.0,Party-Military,24
+2014.0,Party-Personal,72
+2014.0,Party-Personal-Military Hybrid,12
+2014.0,Personal Dictatorship,251
+2014.0,Presidential Democracy,642
+2014.0,Provisional - Civilian,47
+2014.0,Provisional - Military,4
+2014.0,Warlordism,13
+2015.0,Dominant Party,195
+2015.0,Foreign/Occupied,25
+2015.0,Military,24
+2015.0,Military-Personal,12
+2015.0,Monarchy,157
+2015.0,Parliamentary Democracy,883
+2015.0,Party-Military,24
+2015.0,Party-Personal,72
+2015.0,Party-Personal-Military Hybrid,12
+2015.0,Personal Dictatorship,235
+2015.0,Presidential Democracy,663
+2015.0,Provisional - Civilian,36
+2015.0,Warlordism,23
+2016.0,Dominant Party,194
+2016.0,Foreign/Occupied,26
+2016.0,Military,24
+2016.0,Military-Personal,12
+2016.0,Monarchy,156
+2016.0,Parliamentary Democracy,886
+2016.0,Party-Military,25
+2016.0,Party-Personal,73
+2016.0,Party-Personal-Military Hybrid,12
+2016.0,Personal Dictatorship,240
+2016.0,Presidential Democracy,669
+2016.0,Provisional - Civilian,26
+2016.0,Warlordism,25
+2017.0,Dominant Party,195
+2017.0,Foreign/Occupied,25
+2017.0,Military,24
+2017.0,Military-Personal,12
+2017.0,Monarchy,156
+2017.0,Parliamentary Democracy,882
+2017.0,Party-Military,24
+2017.0,Party-Personal,73
+2017.0,Party-Personal-Military Hybrid,12
+2017.0,Personal Dictatorship,229
+2017.0,Presidential Democracy,689
+2017.0,Provisional - Civilian,15
+2017.0,Warlordism,24
+2018.0,Dominant Party,187
+2018.0,Foreign/Occupied,26
+2018.0,Military,24
+2018.0,Military-Personal,12
+2018.0,Monarchy,156
+2018.0,Parliamentary Democracy,895
+2018.0,Party-Military,24
+2018.0,Party-Personal,84
+2018.0,Party-Personal-Military Hybrid,12
+2018.0,Personal Dictatorship,221
+2018.0,Presidential Democracy,681
+2018.0,Provisional - Civilian,12
+2018.0,Warlordism,24
+2019.0,Dominant Party,180
+2019.0,Foreign/Occupied,25
+2019.0,Military,16
+2019.0,Military-Personal,21
+2019.0,Monarchy,158
+2019.0,Parliamentary Democracy,924
+2019.0,Party-Military,24
+2019.0,Party-Personal,91
+2019.0,Party-Personal-Military Hybrid,12
+2019.0,Personal Dictatorship,212
+2019.0,Presidential Democracy,653
+2019.0,Provisional - Civilian,29
+2019.0,Provisional - Military,4
+2019.0,Warlordism,24
+2020.0,Dominant Party,189
+2020.0,Foreign/Occupied,26
+2020.0,Military,12
+2020.0,Military-Personal,24
+2020.0,Monarchy,158
+2020.0,Parliamentary Democracy,913
+2020.0,Party-Military,24
+2020.0,Party-Personal,85
+2020.0,Party-Personal-Military Hybrid,12
+2020.0,Personal Dictatorship,206
+2020.0,Presidential Democracy,645
+2020.0,Provisional - Civilian,47
+2020.0,Provisional - Military,6
+2020.0,Warlordism,24
+2021.0,Dominant Party,92
+2021.0,Foreign/Occupied,12
+2021.0,Military,11
+2021.0,Military-Personal,12
+2021.0,Monarchy,78
+2021.0,Parliamentary Democracy,453
+2021.0,Party-Military,8
+2021.0,Party-Personal,48
+2021.0,Party-Personal-Military Hybrid,6
+2021.0,Personal Dictatorship,100
+2021.0,Presidential Democracy,328
+2021.0,Provisional - Civilian,17
+2021.0,Provisional - Military,10
+2021.0,Warlordism,9
