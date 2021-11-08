@@ -9,6 +9,7 @@
 	- Kunne ha løst dette med .option("mode", "DROPMALFORMED")
 5. I assigned universityDf again, and uses printSchema to make sure it was correct, and sure it was!
 6. I tested a simple aggregation on it, and sorted by number of students in descending order
+--
 7. Wrote base file as parquet
 8. Now I want to write my first aggregation
 9. Wrote my first aggregation (avgScoreByYear) and wrote it to csv
