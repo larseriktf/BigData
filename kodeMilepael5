@@ -1,4 +1,6 @@
 	import org.apache.spark.sql.types._
+	
+	
 val customSchema = StructType(Array(StructField("country",StringType, true),
 StructField("Population in thousands (2017)", IntegerType, true),
 StructField("GDP: Gross domestic product (million current US$)", DoubleType, true),
@@ -80,7 +82,23 @@ val temp2 = temp.withColumn("freetime", setString(temp("freetime")))
 temp2.write.format("csv").option("header","true").mode("overwrite").save("freetime-grades.csv")
 
 
+app id = local-1636390465861
 
 
+hadoop fs -ls hdfs:///		-rm
+
+val PDF = spark.read.option("header","true").option("inferSchema","true").load("hdfs:///country-profiles.parquet")
+
+
+hadoop fs -copyFromLocal country-profiles.parquet /country-profiles.parquet
+hadoop fs -copyFromLocal university_write.parquet /university-write.parquet
+hadoop fs -copyFromLocal student-performance.parquet /student-performance.parquet
+hadoop fs -copyFromLocal reign_write.parquet /reign-write.parquet
+hadoop fs -copyFromLocal regime_write.parquet /regime-write.parquet
+hadoop fs -copyFromLocal leader_write.parquet /leader-write.parquet
+hadoop fs -copyFromLocal election_write.parquet /election-write.parquet
+//-copyToLocal for motass
+
+val df = spark.read.option("header","true").parquet("hdfs://localhost:9000/filepath")
 
 
