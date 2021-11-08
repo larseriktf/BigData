@@ -21,10 +21,11 @@ StructField("Affordability Index", DoubleType, true),
 StructField("Cost Of Living Index", DoubleType, true),
 StructField("Cost Of Living Plus Rent Index", DoubleType, true),
 StructField("Life expectancy at birth, total (years)", DoubleType, true),
-StructField("Military expenditure (% of GDP)", DoubleType, true)))
+StructField("Military expenditure (% of GDP)", DoubleType, true),
+StructField("Tax revenue (% of GDP)", DoubleType,true))
 
 
-myDf.select("country", "Population in thousands (2017)", "GDP: Gross domestic product (million current US$)","GDP per capita (current US$)","Unemployment (% of labour force)","Population growth rate (average annual %)","Urban population (% of total population)_x","Urban population growth rate (average annual %)","Health: Total expenditure (% of GDP)","Education: Government expenditure (% of GDP)","Individuals using the Internet (per 100 inhabitants)","Quality Of Life Index","Purchasing Power Index","Safety Index","Health Care Index","Property price to income ratio","Affordability Index","Cost Of Living Index","Cost Of Living Plus Rent Index","Life expectancy at birth, total (years)","Military expenditure (% of GDP)" Tax revenue (% of GDP),").as("Country Stats").printSchema()
+myDf.select("country", "Population in thousands (2017)", "GDP: Gross domestic product (million current US$)","GDP per capita (current US$)","Unemployment (% of labour force)","Population growth rate (average annual %)","Urban population (% of total population)_x","Urban population growth rate (average annual %)","Health: Total expenditure (% of GDP)","Education: Government expenditure (% of GDP)","Individuals using the Internet (per 100 inhabitants)","Quality Of Life Index","Purchasing Power Index","Safety Index","Health Care Index","Property price to income ratio","Affordability Index","Cost Of Living Index","Cost Of Living Plus Rent Index","Life expectancy at birth, total (years)","Military expenditure (% of GDP)", Tax revenue (% of GDP)").as("Country Stats").printSchema()
 
 
 val oldCol = Seq("country", "Population in thousands (2017)", "GDP: Gross domestic product (million current US$)","GDP per capita (current US$)","Unemployment (% of labour force)","Population growth rate (average annual %)","Urban population (% of total population)_x","Urban population growth rate (average annual %)","Health: Total expenditure (% of GDP)","Education: Government expenditure (% of GDP)","Individuals using the Internet (per 100 inhabitants)","Quality Of Life Index","Purchasing Power Index","Safety Index","Health Care Index","Property price to income ratio","Affordability Index","Cost Of Living Index","Cost Of Living Plus Rent Index","Life expectancy at birth, total (years)","Military expenditure (% of GDP)", "Tax revenue (% of GDP)" )
@@ -82,7 +83,6 @@ val temp2 = temp.withColumn("freetime", setString(temp("freetime")))
 temp2.write.format("csv").option("header","true").mode("overwrite").save("freetime-grades.csv")
 
 
-app id = local-1636390465861
 
 
 hadoop fs -ls hdfs:///		-rm
@@ -100,5 +100,7 @@ hadoop fs -copyFromLocal election_write.parquet /election-write.parquet
 //-copyToLocal for motass
 
 val df = spark.read.option("header","true").parquet("hdfs://localhost:9000/filepath")
+
+val df = spark.read.option("header","true").csv("student-performance.csv")
 
 
