@@ -45,10 +45,9 @@ universityDf.write.format("org.apache.spark.sql.cassandra").option("table","univ
 // Loader det dataframe fra Cassandra
 val newUniversityDf = spark.read.format("org.apache.spark.sql.cassandra").option("table","university_rating").option("keyspace","university").load()
 
-// Lager aggregering i scala
-val universityByFemaleRatio = newUniversityDf.select(col("id"), col("country"), col("university_name"), split(col("female_male_ratio"), " : ").getItem(0).cast("int").as("female_ratio")).distinct().sort(desc_nulls_last("female_ratio")).limit(10)
 
-// Lag table til aggregering i cassandra
+
+// Lag table til aggregering i Cassandra
 CREATE TABLE university.female_ratio (
     id INT PRIMARY KEY,
     country TEXT,
@@ -56,8 +55,47 @@ CREATE TABLE university.female_ratio (
     female_ratio INT
 );
 
+// Lager aggregering i scala
+val universityByFemaleRatio = newUniversityDf.select(col("id"), col("country"), col("university_name"), split(col("female_male_ratio"), " : ").getItem(0).cast("int").as("female_ratio")).where(col("year") === 2016).orderBy(desc_nulls_last("female_ratio")).limit(10)
+
 // Skriver aggregering til Cassandra
 universityByFemaleRatio.write.format("org.apache.spark.sql.cassandra").option("table","female_ratio").option("keyspace","university").option("confirm.truncate", "true").mode("Overwrite").save()
 
 // Loader aggregering fra Cassandra for å sjekke
 val newUniversityByFemaleRatio = spark.read.format("org.apache.spark.sql.cassandra").option("table","female_ratio").option("keyspace","university").load()
+
+
+
+// Lager table til andre aggregering i Cassandra
+CREATE TABLE university.male_ratio (
+    id INT PRIMARY KEY,
+    country TEXT,
+    university_name TEXT,
+    male_ratio INT
+);
+
+// Lager andre aggregering i scala
+val universityByMaleRatio = newUniversityDf.select(col("id"), col("country"), col("university_name"), split(col("female_male_ratio"), " : ").getItem(1).cast("int").as("male_ratio")).where(col("year") === 2016).orderBy(desc_nulls_last("male_ratio")).limit(10)
+
+// Skriver andre aggregering til Cassandra
+universityByMaleRatio.write.format("org.apache.spark.sql.cassandra").option("table","male_ratio").option("keyspace","university").option("confirm.truncate", "true").mode("Overwrite").save()
+
+// Loader aggregering fra Cassandra for å sjekke
+val newUniversityByMaleRatio = spark.read.format("org.apache.spark.sql.cassandra").option("table","male_ratio").option("keyspace","university").load()
+
+
+
+// Lager table til tredje aggregering i Cassandra
+CREATE TABLE university.average_score_per_year (
+    year SMALLINT PRIMARY KEY,
+    average_score DOUBLE
+);
+
+// Lager tredje aggregering i scala
+val averageScorePerYear = newUniversityDf.groupBy(col("year")).agg(mean(col("total_score")).as("average_score")).orderBy(desc("year"))
+
+// Skriver tredje aggregering til Cassandra
+averageScorePerYear.write.format("org.apache.spark.sql.cassandra").option("table","average_score_per_year").option("keyspace","university").option("confirm.truncate", "true").mode("Overwrite").save()
+
+// Loader aggregering fra Cassandra for å sjekke
+val newAverageScorePerYear = spark.read.format("org.apache.spark.sql.cassandra").option("table","average_score_per_year").option("keyspace","university").load()
