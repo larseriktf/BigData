@@ -51,7 +51,7 @@ universityDf.write.format("org.apache.spark.sql.cassandra").option("table","univ
 val newUniversityDf = spark.read.format("org.apache.spark.sql.cassandra").option("table","university_rating").option("keyspace","university").load()
 
 
-// Tredje aggregering
+// Første aggregering
 // Lag table til aggregering i Cassandra
 CREATE TABLE university.female_ratio (
     id INT PRIMARY KEY,
@@ -67,7 +67,7 @@ val universityByFemaleRatio = newUniversityDf.select(col("id"), col("country"), 
 universityByFemaleRatio.write.format("org.apache.spark.sql.cassandra").option("table","female_ratio").option("keyspace","university").option("confirm.truncate", "true").mode("Overwrite").save()
 
 
-// Tredje aggregering
+// Andre aggregering
 // Lager table til andre aggregering i Cassandra
 CREATE TABLE university.male_ratio (
     id INT PRIMARY KEY,
