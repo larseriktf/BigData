@@ -1,0 +1,46 @@
+// Installerer cassandra
+sudo -i
+echo "deb http://www.apache.org/dist/cassandra/debian 40x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install cassandra
+nodetool status
+cqlsh
+
+// Åpner cqlsh og oppretter database
+CREATE KEYSPACE "university" WITH replication = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+
+USE university;
+
+CREATE TABLE university_rating (
+    id INT PRIMARY KEY,
+    world_rank TEXT,
+    university_name TEXT,
+    country TEXT,
+    teaching DOUBLE,
+    international DOUBLE,
+    research DOUBLE,
+    citations DOUBLE,
+    income DOUBLE,
+    total_score DOUBLE,
+    num_students INT,
+    student_staff_ratio DOUBLE,
+    international_students TINYINT,
+    female_male_ratio TEXT,
+    year SMALLINT
+);
+
+// Åpner spark-shell
+spark-shell --conf spark.cassandra.connection.host=127.0.0.1 \
+--packages com.datastax.spark:spark-cassandra-connector_2.12:3.0.0 \
+--conf spark.sql.extensions=com.datastax.spark.connector.CassandraSparkExtensions
+
+
+// Ser at hver rad mangler en Primary Key, så legger den til manuelt i csv filen via LibreOffice
+val universityDf = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("datasets/timesData.csv")
+
+// Skriver til Cassandra
+universityDf.write.format("org.apache.spark.sql.cassandra").option("table","university_rating").option("keyspace","university").option("confirm.truncate", "true").mode("Overwrite").save()
+
+// Loader det dataframe fra Cassandra
+val newUniversityDf = spark.read.format("org.apache.spark.sql.cassandra").option("table","university_rating").option("keyspace","university").load()
