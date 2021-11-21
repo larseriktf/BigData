@@ -1,0 +1,126 @@
+// Installerer cassandra
+sudo -i
+echo "deb http://www.apache.org/dist/cassandra/debian 40x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install cassandra
+nodetool status
+cqlsh
+
+
+////////////////
+// OPPGAVE 1A //
+////////////////
+
+// Åpner cqlsh og oppretter database
+CREATE KEYSPACE "university" WITH replication = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+
+USE university;
+
+CREATE TABLE university_rating (
+    id INT PRIMARY KEY,
+    world_rank TEXT,
+    university_name TEXT,
+    country TEXT,
+    teaching DOUBLE,
+    international DOUBLE,
+    research DOUBLE,
+    citations DOUBLE,
+    income DOUBLE,
+    total_score DOUBLE,
+    num_students INT,
+    student_staff_ratio DOUBLE,
+    international_students TINYINT,
+    female_male_ratio TEXT,
+    year SMALLINT
+);
+
+// Åpner spark-shell
+spark-shell --conf spark.cassandra.connection.host=127.0.0.1 \
+--packages com.datastax.spark:spark-cassandra-connector_2.12:3.0.0 \
+--conf spark.sql.extensions=com.datastax.spark.connector.CassandraSparkExtensions
+
+
+// Ser at hver rad mangler en Primary Key, så legger den til manuelt i csv filen via LibreOffice
+val universityDf = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("datasets/timesData.csv")
+
+// Skriver til Cassandra
+universityDf.write.format("org.apache.spark.sql.cassandra").option("table","university_rating").option("keyspace","university").option("confirm.truncate", "true").mode("Overwrite").save()
+
+// Loader det dataframe fra Cassandra
+val newUniversityDf = spark.read.format("org.apache.spark.sql.cassandra").option("table","university_rating").option("keyspace","university").load()
+
+
+// Tredje aggregering
+// Lag table til aggregering i Cassandra
+CREATE TABLE university.female_ratio (
+    id INT PRIMARY KEY,
+    country TEXT,
+    university_name TEXT,
+    female_ratio INT
+);
+
+// Lager aggregering i scala
+val universityByFemaleRatio = newUniversityDf.select(col("id"), col("country"), col("university_name"), split(col("female_male_ratio"), " : ").getItem(0).cast("int").as("female_ratio")).where(col("year") === 2016).orderBy(desc_nulls_last("female_ratio")).limit(10)
+
+// Skriver aggregering til Cassandra
+universityByFemaleRatio.write.format("org.apache.spark.sql.cassandra").option("table","female_ratio").option("keyspace","university").option("confirm.truncate", "true").mode("Overwrite").save()
+
+
+// Tredje aggregering
+// Lager table til andre aggregering i Cassandra
+CREATE TABLE university.male_ratio (
+    id INT PRIMARY KEY,
+    country TEXT,
+    university_name TEXT,
+    male_ratio INT
+);
+
+// Lager andre aggregering i scala
+val universityByMaleRatio = newUniversityDf.select(col("id"), col("country"), col("university_name"), split(col("female_male_ratio"), " : ").getItem(1).cast("int").as("male_ratio")).where(col("year") === 2016).orderBy(desc_nulls_last("male_ratio")).limit(10)
+
+// Skriver andre aggregering til Cassandra
+universityByMaleRatio.write.format("org.apache.spark.sql.cassandra").option("table","male_ratio").option("keyspace","university").option("confirm.truncate", "true").mode("Overwrite").save()
+
+
+// Tredje aggregering
+// Lager table til tredje aggregering i Cassandra
+CREATE TABLE university.average_score_per_year (
+    year SMALLINT PRIMARY KEY,
+    average_score DOUBLE
+);
+
+// Lager tredje aggregering i scala
+val averageScorePerYear = newUniversityDf.groupBy(col("year")).agg(mean(col("total_score")).as("average_score")).orderBy(desc("year"))
+
+// Skriver tredje aggregering til Cassandra
+averageScorePerYear.write.format("org.apache.spark.sql.cassandra").option("table","average_score_per_year").option("keyspace","university").option("confirm.truncate", "true").mode("Overwrite").save()
+
+
+
+////////////////
+// OPPGAVE 1B //
+////////////////
+
+// Første aggregering
+// Laster første aggregering fra Cassandra
+val universityByFemaleRatioDf = spark.read.format("org.apache.spark.sql.cassandra").option("table","female_ratio").option("keyspace","university").load()
+
+// Skriver første aggregering til Json
+universityByFemaleRatioDf.repartition(1).write.mode("overwrite").json("components/json/university_by_female_ratio.json")
+
+
+// Andre aggregering
+// Laster andre aggregering fra Cassandra
+val universityByMaleRatioDf = spark.read.format("org.apache.spark.sql.cassandra").option("table","male_ratio").option("keyspace","university").load()
+
+// Skriver andre aggregering til Json
+universityByMaleRatioDf.repartition(1).write.mode("overwrite").json("components/json/university_by_male_ratio.json")
+
+
+// Tredje aggregering
+// Laster tredje aggregering fra Cassandra
+val averageScorePerYearDf = spark.read.format("org.apache.spark.sql.cassandra").option("table","average_score_per_year").option("keyspace","university").load()
+
+// Skriver andre aggregering til Json
+averageScorePerYearDf.repartition(1).write.mode("overwrite").json("components/json/average_score_per_year.json")
