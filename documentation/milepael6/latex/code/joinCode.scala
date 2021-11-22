@@ -1,4 +1,4 @@
-//Første join
+// First join
 val dataForResult = myDf.select(col("Fedu"), col("Medu"), col("G1"), col("G2"), col("G3")).persist(MEMORY_ONLY)
 //framen can now be shipped to all executors
 val broadcastRes = broadcast(dataForResult)
