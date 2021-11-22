@@ -1,6 +1,24 @@
 \section{Introduksjon}
 
-\subsection{Brukergruppe}
-Vår tiltenkte brukergruppe består av . Dette kan være folk som har nytte av globale studier til sitt arbeid som forskere, bachelor- og master-studenter, og journalister, men også folk med generell interesse for studiene. Det sagt, 
+\subsection{Brukergruppe og løsning}
+Vår tiltenkte brukergruppe består personer som har nytte av globale studier og data til sitt arbeid som forskere, bachelor- og master-studenter, og journalister, men også folk med generell interesse for socio-økonomiske data. Hovedfokuset er å presentere hvordan forskjeller kan vise seg i områder man ikke nødvendigvis ville lagt merke til det, finne økonomiske forskjeller mellom nasjoner, og å kunne peke til regimetype som har skapt situasjonen landet står ovenfor, samt deres utdanningsmuligheter og konsekvenser.
+
+For en journalist vil det være ekstremt viktig at dataen stemmer, da det skal presenteres for et større publikum. For denne brukeren vil det ikke være veldig problematisk med ytelse, men det kan føre til at de velger en annen tjeneste, så ytelse blir viktig alikevel. Ytelsen kommer her i form av kjerne-replikering som gjør at samme data vil være tilgjengelig på flere kjerner, og skaper høyere tilgjengelighet, stabilitet, og gjør det slik at å bytte ut en feilende node er enklere.
+
+Brukerne skal kunne ha litt varierende tilgang til de forskjellige komponentene, basert på hvilken databasetype som er i bruk. Ytelse vil alltid være viktig, da bare litt latency i liten skala vil bety massiv latency i stor skala. Å holde transformasjoner "narrow", og å bruke .cache() eller .persist() for å lagre data midlertidig blir viktig, i tillegg til å broadcaste() alle variabler som gjenbrukes.
+
+\subsubsection{Nøkkel-verdi}
+Nøkkel-verdi databasen serverer brukeren med raske queries og horizontalt skalerbar arkitektur som tillater at å legge inn nye skoler med ny data blir enkelt. Dette er noe som kunne vært fint å bruke for et land eller fylke som ønsker å følge utdanningsnivåer og socio-økonomiske tilstander, i tillegg til administratorer o.l. ved skoler som ønsker å følge nasjonale eller internasjonale trender og kvalitet. Siden det heller ikke er krav om satt struktur, så kan ny data legges inn så og si slik den er.
+
+\subsubsection{DokumentDb}
+I dokument databasen er det landsprofiler med mye tilhørende data som vil endre seg relativt ofte. Disse profilene vil endre seg relativt ofte, og krever da høy fleksibilitet. I tillegg er det forskjellig informasjon som vil være nødvendig og tilgjengelig på forskjellige profiler, så en skjema-løs ordning er bra. En annen fordel er hvordan data fordeles, og gjør at nøstede og dypere søk yter bedre, og skaper høyere tilgjengelighet for brukeren.
+
+\subsubsection{Kolonnefamilie}
+I Kolonnefamilie-databasen har vi mange ferdige aggregeringer. Disse aggregeringene skal være lett tilgjengelige, og de skal kunne lagres forskjellige kolonner innen samme tabell. Siden denne db-modellen også er skjemaløst, så kan vi sette kolonnenavn som vi vil, også innen samme tabell, og vi kan legge til nye kolonner i real-time om nødvendig. Med mange aggregeringer og mye data lagret i en kolonne, så reduserer det de nødvendige ressursene fra disken og hvor lang spørringene tar.
+
+\subsubsection{Grafdatabase}
+Grafdatabasen har vi dypt relatert data som brukeren skal kunne lett se sammenhengen i. En bruker som følger med på internasjonal politikk eller verdensutvikling kan bruke dette for eksempel til å se styrken til regimer, hvilke land som deler politisk sammensetning, og deres stabilitet. Det som er viktig med denne seksjonen er at brukeren lett kan se sammenhengene, f.eks. kan man med en graphdb hente ut data basert på koblinger(edges), og ikke bare nodene.
+
+
 
 
