@@ -19,11 +19,29 @@ Videre bestemmer replikasjonsfaktoren hvor mange datakopier som skal spres utove
 I Cassandra tar man også hensyn til noe kalt for \textit{Cassandra consistensy level}, som er minimum antall noder som må annerkjenne lese- og skrive-spørringer før det kan kalles en gyldig operasjon. Dette er en verdi som kan settes selv. Som regel brukes Cassandra verdien \textit{Local Quorum}, som defineres slik: \lstinline{LOCAL_QUORUM = (replication_factor/2) + 1}, denne rundes ned til nærmeste heltall.
 
 \subsubsection{Opprette kolonnefamilier i Cassandra}
+Det neste er å opprette selve tabellene i Cassandra via \lstinline{CREATE TABLE} setningen. Her er det viktig å passe på at både kolonnenavn og datatyper stemmer med datasettet, ellers kan man ikke sende dataen videre til Cassandra. I tillegg krever Cassandra minst én \textit{primærnøkkel}, noe som var problamtisk da det opprinnelige datasettet ikke hadde noen id. Man kunne løst dette på flere måter, men jeg valgte å manuelt legge til dette i LibreOffice. Ellers kan man bruke følgende kommando i spark-shell: \lstinline{myDf.withColumn("id", monotonically_increasing_id)}.
+
 \txt{code/createTable.txt}
 
 \subsubsection{Laste opp rådata}
+Første dataframe som skal lastes opp til Cassandra er rådataen. Dette er grunnlaget for all data som skal vises på nettsiden, og brukes når man skal legge til eller slette rader fra datasettet, slik at alle de andre komponentene også blir oppdatert. Her har vi valgt å inkludere alle kolonnene i datasettet, selv om mange av de ikke brukes av komponentene. Det skyldes at vi ønsker å kunne laste opp hele datasettet fra kilden igjen dersom det skulle oppdatere seg, samt at vi ikke har lyst til å kaste bort data. I Big Data pleier man å lagre all data, siden det kan komme til nytte senere.
+
 \code{Scala}{code/populateCassandraRaw.scala}
 
-%\code{Scala}{code/populateCassandraFemaleRatio.scala}
-%\code{Scala}{code/populateCassandraMaleRatio.scala}
-%\code{Scala}{code/populateCassandraAverageScorePerYear.scala}
+Når timesData.csv leses inn i Spark-Shell, brukes \lstinline{inferSchema} til å automatisk generere skjema basert på dataen i datasettet. Her er det bare viktig å passe på at alle datatypene stemmer, siden Spark ofte gjetter feil. I tillegg brukes \lstinline{confirm.truncate} og \lstinline{Overwrite} til å overskrive eksisterende data i Cassandra. Dersom det er ønskelig å laste opp rad for rad, kan \lstinline{Append} brukes i stedet. Til slutt lastes inn datasettet fra Cassandra som blir brukt til de resterende komponentene.
+
+\subsubsection{Skoler med ekstrem kjønnsfordeling}
+Alle aggregeringene opprettes og bearbeides i spark-shell før de blir lastet opp til Cassandra. Fra tidligere kodesnutt brukes \lstinline{newUniversityDf} til å lage aggregeringene, men dette er helt vilkårlig, det går fint ann å jobbe direkte på den opprinnelige dataframen.
+
+Legg merke til bruken av \lstinline{orderBy}. I designet til nettsiden er det tenkt at komponenten skal vise top ti skoler med høyest kvinnefordeling sortert i synkende rekkefølge, men etter å ha laget denne aggregeringen oppsto det et problem. Det viser seg at kolonnefamiliedatabaser ikke tar hensyn til sortering, bortsett fra at de fremstilles i alfabetisk rekkefølge. På grunn av dette har ikke \lstinline{orderBy} eller \lstinline{sort} noen effekt etter at aggregeringen har blitt lastet opp til Cassandra. Dette kan imidlertid løses ved at enten spark eller businesslogikken tar hensyn til sorteringen når den vises fram på nettsiden.
+
+\code{Scala}{code/populateCassandraFemaleRatio.scala}
+
+Samsvarende aggregering for menn:
+
+\code{Scala}{code/populateCassandraMaleRatio.scala}
+
+\subsubsection{Gjennomsnittlig poengsum hvert år}
+Den siste aggregeringen tar for seg den gjennomsnittlige totalpoengsummen hvert år i datasettet. Vært å merke er at det gjøres ingen handlinger på selve aggregeringen før den lastes opp til databasen, da \lstinline{averageSorePerYear} lagrer kun en liste over transformasjoner som skal gjøres på dataframen. Dersom variabelen hadde inkludert \lstinline{.show()}, som er en handling, ville hver enkel transformasjon eksekveres etter hverandre.
+
+\code{Scala}{code/populateCassandraAverageScorePerYear.scala}
