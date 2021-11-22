@@ -8,5 +8,4 @@ CREATE TABLE edu.parents (
 	"MFirstYear" DOUBLE,
 	"MSecondYear" DOUBLE,
 	"MThirdYear" DOUBLE
-
 );
