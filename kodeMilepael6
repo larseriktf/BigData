@@ -75,7 +75,7 @@ val result2 = dataForResult.groupBy("Medu").agg(expr(" avg(G1) as FirstYear"), e
 val joined = result1.joinWith(result2, result1("Fedu") === result2("Medu"))
 
 
-val temp = joined.selectExpr("_1 as Father, "_2 as Mother")
+val temp = joined.selectExpr("_1 as Father", "_2 as Mother")
 
 val temp2 = temp.select(col("Father.*"),col("Mother.*"))
 
@@ -129,6 +129,8 @@ val reignDf = PDF.select($"ccode".as("source.ccode"), $"country".as("source.coun
 
 reignDf.write.format("org.neo4j.spark.DataSource").mode("Overwrite").option("url", "bolt://localhost:7687").option("authentication.basic.username", "neo4j").option("authentication.basic.password", "student").option("labels", ":Reign").option("node.keys", "source.ccode").save()
 
+val df = spark.read.format("org.neo4j.spark.DataSource").option("url", "bolt://localhost:7687").option("authentication.basic.username", "neo4j").option("authentication.basic.password", "student").option("relationship", "HAD_REGIME").option("relationship.source.labels", "Reign").option("relationship.target.labels", "Regime").load()
+
 must use `` when (.dot) is used in names
 df.select("`source.source.country`").show()
 
@@ -143,7 +145,7 @@ CREATE KEYSPACE educationTest WITH replication = {'class': 'SimpleStrategy', 're
 CREATE KEYSPACE edu WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
    
 CREATE TABLE edu.parents (
-	"FatherEdu" INT PRIMARY KEY,
+	"FatherEdu" INT PRIMARY KEY
 	"FFirstYear" DOUBLE,
 	"FSecondYear" DOUBLE,
 	"FThirdYear" DOUBLE,
@@ -151,9 +153,10 @@ CREATE TABLE edu.parents (
 	"MFirstYear" DOUBLE,
 	"MSecondYear" DOUBLE,
 	"MThirdYear" DOUBLE
+
 );
 
-myDf.orderBy("FatherEdu", "MotherEdu").write.format("org.apache.spark.sql.cassandra").option("table","parents").option("keyspace","educationTest").option("confirm.truncate", "true").mode("Overwrite").save()
+myDf.orderBy("FatherEdu", "MotherEdu").write.format("org.apache.spark.sql.cassandra").option("table","parents").option("keyspace","edu").option("confirm.truncate", "true").mode("Overwrite").save()
 val loadedCas = spark.read.format("org.apache.spark.sql.cassandra").option("table", "parents").option("keyspace", "edu").load()
 
 

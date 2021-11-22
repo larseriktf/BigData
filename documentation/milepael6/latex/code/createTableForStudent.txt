@@ -1,0 +1,11 @@
+CREATE TABLE edu.parents (
+	"FatherEdu" INT PRIMARY KEY
+	"FFirstYear" DOUBLE,
+	"FSecondYear" DOUBLE,
+	"FThirdYear" DOUBLE,
+	"MotherEdu" INT,
+	"MFirstYear" DOUBLE,
+	"MSecondYear" DOUBLE,
+	"MThirdYear" DOUBLE
+
+);
