@@ -25,7 +25,7 @@ Det finnes til slutt to forskjellige varianter av transformeringer: Narrow og Wi
 Vi bruker .persist() for å bevare en kopi av dataen på spesifisert plass lokalt i systemet. Dette gjør at det er mye mer lettvint å gjenbruke dataen, da man kun gjør nødvendige kall mot databasen/oppretter verdien én gang.
 
 
-\code{Scala}{code/createTableForStudent}
+\txt{code/createTableForStudent.txt}
 
 
 I denne kodebiten så har vi da hentet ut en seksjon av dataframen(DF) og brukt \lstinline{.persist(MEMORY_ONLY)} for å lagre til kun minne. Type persist settes basert på størrelsen til dataen. Deretter broadcaster vi denne DF-en, som betyr at vi sender en read-only kopi til hver av executorene som gjør en handling, som da vil fyre av persistence-kallet. Dette skjer slik pga. lazy loading.
