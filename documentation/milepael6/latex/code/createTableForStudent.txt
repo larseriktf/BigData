@@ -1,3 +1,4 @@
+
 CREATE TABLE edu.parents (
 	"FatherEdu" INT PRIMARY KEY
 	"FFirstYear" DOUBLE,
