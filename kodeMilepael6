@@ -1,0 +1,162 @@
+	import org.apache.spark.sql.types._
+	import org.apache.spark.sql.SparkSession
+	import 
+	
+	
+	
+	
+val customSchema = StructType(Array(StructField("country",StringType, true),
+StructField("Population in thousands (2017)", IntegerType, true),
+StructField("GDP: Gross domestic product (million current US$)", DoubleType, true),
+StructField("GDP per capita (current US$)", DoubleType, true),
+StructField("Unemployment (% of labour force)", DoubleType, true),
+StructField("Population growth rate (average annual %)", DoubleType, true),
+StructField("Urban population (% of total population)_x", DoubleType, true),
+StructField("Urban population growth rate (average annual %)", DoubleType, true),
+StructField("Health: Total expenditure (% of GDP)", DoubleType, true),
+StructField("Education: Government expenditure (% of GDP)", DoubleType, true),
+StructField("Individuals using the Internet (per 100 inhabitants)", IntegerType, true),
+StructField("Quality Of Life Index", DoubleType, true),
+StructField("Purchasing Power Index", DoubleType, true),
+StructField("Safety Index", DoubleType, true),
+StructField("Health Care Index", DoubleType,true),
+StructField("Property price to income ratio", DoubleType,true),
+StructField("Affordability Index", DoubleType, true),
+StructField("Cost Of Living Index", DoubleType, true),
+StructField("Cost Of Living Plus Rent Index", DoubleType, true),
+StructField("Life expectancy at birth, total (years)", DoubleType, true),
+StructField("Military expenditure (% of GDP)", DoubleType, true),
+StructField("Tax revenue (% of GDP)", DoubleType,true))
+
+
+val countryDf = myDf.select("country", "Population in thousands (2017)", "GDP: Gross domestic product (million current US$)","GDP per capita (current US$)","Unemployment (% of labour force)","Population growth rate (average annual %)","Urban population (% of total population)_x","Urban population growth rate (average annual %)","Health: Total expenditure (% of GDP)","Education: Government expenditure (% of GDP)","Individuals using the Internet (per 100 inhabitants)","Quality Of Life Index","Purchasing Power Index","Safety Index","Health Care Index","Property price to income ratio","Affordability Index","Cost Of Living Index","Cost Of Living Plus Rent Index","Life expectancy at birth, total (years)","Military expenditure (% of GDP)", Tax revenue (% of GDP)").as("Country Stats").cache()
+
+
+val oldCol = Seq("country", "Population in thousands (2017)", "GDP: Gross domestic product (million current US$)","GDP per capita (current US$)","Unemployment (% of labour force)","Population growth rate (average annual %)","Urban population (% of total population)_x","Urban population growth rate (average annual %)","Health: Total expenditure (% of GDP)","Education: Government expenditure (% of GDP)","Individuals using the Internet (per 100 inhabitants)","Quality Of Life Index","Purchasing Power Index","Safety Index","Health Care Index","Property price to income ratio","Affordability Index","Cost Of Living Index","Cost Of Living Plus Rent Index","Life expectancy at birth, total (years)","Military expenditure (% of GDP)", "Tax revenue (% of GDP)" )
+
+
+val newCol = Seq("country", "population", "gdp", "gdpPerCapita","unemployment", "populationGrowthRate", "urbanPop","urbanPopGrowth", "healthTotal", "educationTotal", "internetUsers", "qualityOfLifeI", "PPI", "safetyI", "HealthI", "propPriceToIncome","affordabilityI", "costI", "costPlusRentI", "lifeExpectancy", "militaryTotal", "taxes")
+
+
+
+val list = oldCol.zip(newCol).map(f=>{col(f._1).as(f._2)})
+val newDF = countryDf.select(list:_*).cache()
+
+
+
+newDF.write.format("parquet").mode("errorIfExists").option("header", true).save("country-profiles.parquet")
+
+newDF.write.format("csv").mode("overwrite").option("header", true).save("country-profiles.csv")
+
+val myDf = spark.read.format("parquet").option("header",true).load("country-profiles.parquet")
+val myDF = spark.read.parquet("country-profiles.parquet")
+
+
+val agg = myDf.sort(desc("taxes")).select("country", "taxes").as("Taxes in % of GDP")
+val temp = agg.toDF()
+temp.write.format("csv").option("header","true").mode("overwrite").save("country-gdp.csv")
+
+
+
+
+val thisTemp = PDF.select(col("country"),  expr("(costPlusRentI / 100) * gdp as RealCost ")).sort(desc("RealCost"))
+
+
+
+
+val customSchema = new StructType().add("Father", ArrayType(new StructType().add("Fedu", IntegerType).add("First",DoubleType).add("Second", DoubleType).add("Third", DoubleType))).add("Mother", ArrayType(new StructType().add("Medu", IntegerType).add("First",DoubleType).add("Second", DoubleType).add("Third", DoubleType)))
+
+val dataForResult = myDf.broadcast(select(col("Fedu"), col("Medu"), col("G1"), col("G2"), col("G3")))
+
+val result1 = dataForResult.groupBy("Fedu").agg(expr(" avg(G1) as FirstYear"), expr( " avg(G2) as SecondYear"),expr( " avg(G3) as ThirdYear"))
+
+val result2 = dataForResult.groupBy("Medu").agg(expr(" avg(G1) as FirstYear"), expr( " avg(G2) as SecondYear"),expr( " avg(G3) as ThirdYear"))
+
+val joined = result1.joinWith(result2, result1("Fedu") === result2("Medu"))
+
+
+val temp = joined.selectExpr("_1 as Father", "_2 as Mother")
+
+val temp2 = temp.select(col("Father.*"),col("Mother.*"))
+
+val flattenTemp = temp2.toDF("FatherEdu","FFirstYear","FSecondYear","FThirdYear", "MotherEdu","MFirstYear","MSecondYear","MThirdYear")
+
+flattenTemp.write.format("csv").option("header","true").mode("overwrite").save("grades-average.csv")
+
+
+
+
+val temp = PDF.groupBy("studytime").agg(expr(" avg(G1) as FirstYear"), expr( " avg(G2) as SecondYear"),expr( " avg(G3) as ThirdYear"))
+
+val setString = udf {(freetime: Integer) => if(freetime == 1) "Very little" else if(freetime == 2) "Little" else if(freetime == 3) "Medium" else if(freetime == 4) "Much" else "Very Much"} 
+val temp2 = temp.withColumn("freetime", setString(temp("freetime")))
+
+temp2.write.format("csv").option("header","true").mode("overwrite").save("freetime-grades.csv")
+
+
+
+
+hadoop fs -ls hdfs:///		-rm
+
+val PDF = spark.read.option("header","true").option("inferSchema","true").load("hdfs:///country-profiles.parquet")
+
+
+hadoop fs -copyFromLocal country-profiles.parquet /country-profiles.parquet
+hadoop fs -copyFromLocal university_write.parquet /university-write.parquet
+hadoop fs -copyFromLocal student-performance.parquet /student-performance.parquet
+hadoop fs -copyFromLocal reign_write.parquet /reign-write.parquet
+hadoop fs -copyFromLocal regime_write.parquet /regime-write.parquet
+hadoop fs -copyFromLocal leader_write.parquet /leader-write.parquet
+hadoop fs -copyFromLocal election_write.parquet /election-write.parquet
+//-copyToLocal for motass
+
+val df = spark.read.option("header","true").parquet("hdfs://localhost:9000/filepath")
+
+val df = spark.read.option("header","true").csv("student-performance.csv")
+
+
+
+echo "deb http://www.apache.org/dist/cassandra/debian 40x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+
+
+val regime = PDF.select($"cowcode".as("source.cowcode"), $"gwf_country".as("source.country"), $"gwf_casename".as("source.casename"), $"gwf_startdate".as("source.startdate"), $"gwf_enddate".as("source.enddate"), $"gwf_regimetype".as("source.regimetype")).distinct()
+
+
+regime.write.format("org.neo4j.spark.DataSource").mode("Overwrite").option("url", "bolt://localhost:7687").option("authentication.basic.username", "neo4j").option("authentication.basic.password", "student").option("labels", ":Regime ").option("node.keys", "source.casename").save()
+
+
+val reignDf = PDF.select($"ccode".as("source.ccode"), $"country".as("source.country"), $"leader".as("source.leader"), $"year".as("source.year"), $"month".as("source.month"), $"elected".as("source.elected"), $"age".as("source.age"), $"militarycareer".as("source.militaryCareer"), $"government".as("source.government"), $"gov_democracy".as("source.govDemocracy"), $"political_violence".as("source.politicalViolence"), $"couprisk".as("source.coupRisk")).distinct()
+
+reignDf.write.format("org.neo4j.spark.DataSource").mode("Overwrite").option("url", "bolt://localhost:7687").option("authentication.basic.username", "neo4j").option("authentication.basic.password", "student").option("labels", ":Reign").option("node.keys", "source.ccode").save()
+
+val df = spark.read.format("org.neo4j.spark.DataSource").option("url", "bolt://localhost:7687").option("authentication.basic.username", "neo4j").option("authentication.basic.password", "student").option("relationship", "HAD_REGIME").option("relationship.source.labels", "Reign").option("relationship.target.labels", "Regime").load()
+
+must use `` when (.dot) is used in names
+df.select("`source.source.country`").show()
+
+
+spark-shell --conf spark.cassandra.connection.host=127.0.0.1 \
+--packages com.datastax.spark:spark-cassandra-connector_2.12:3.0.0 \
+--conf spark.sql.extensions=com.datastax.spark.connector.CassandraSparkExtensions
+
+
+CREATE KEYSPACE educationTest WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+
+CREATE KEYSPACE edu WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+   
+CREATE TABLE edu.parents (
+	"FatherEdu" INT PRIMARY KEY
+	"FFirstYear" DOUBLE,
+	"FSecondYear" DOUBLE,
+	"FThirdYear" DOUBLE,
+	"MotherEdu" INT,
+	"MFirstYear" DOUBLE,
+	"MSecondYear" DOUBLE,
+	"MThirdYear" DOUBLE
+
+);
+
+myDf.orderBy("FatherEdu", "MotherEdu").write.format("org.apache.spark.sql.cassandra").option("table","parents").option("keyspace","edu").option("confirm.truncate", "true").mode("Overwrite").save()
+val loadedCas = spark.read.format("org.apache.spark.sql.cassandra").option("table", "parents").option("keyspace", "edu").load()
+
+
