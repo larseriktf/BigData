@@ -41,11 +41,11 @@ I prosjektet vårt har vi bestemt oss for å bruke ETCD, siden ETCD prioriterer 
 \subsection{Design av nøkkel}
 På grunn av måten vi velger å oppdatere eksisterende data i databasen, blir nøklene designet på en måte som skiller mellom komponenter og ny studentdata. Komponentene er JSON-objektene som brukes til å vise data på nettsiden, mens studentdataen er rådata som er nyttig for å holde dataen oppdatert. Hvis en student legges til eller oppdateres, oppdateres også komponentene i databasen. Den generelle strukturen på nøkkelen vil derfor være et prefiks for inndeling, etterfulgt av kolon, etterfulgt av navn eller id.
 
-Verdier relatert til komponenter vil ha en nøkkel med prefiks «component» etterfulgt av navnet på komponenten. Eksempel på en nøkkel for en komponent i vår KV-store:
+Verdier relatert til komponenter vil ha en nøkkel med prefiks "component" etterfulgt av navnet på komponenten. Eksempel på en nøkkel for en komponent i vår KV-store:
 
   component:studentByFreeTime
 
-Verdier relatert til studenter vil ha nøkler med prefiks «student» etterfulgt av en 8-sifret id av typen Integer. Eksempel på en nøkkel for en student i vår KV-store:
+Verdier relatert til studenter vil ha nøkler med prefiks "student" etterfulgt av en 8-sifret id av typen Integer. Eksempel på en nøkkel for en student i vår KV-store:
 
   student:02381225
 
@@ -63,7 +63,7 @@ En av grunnene til at dataen vil være lett tilgjengelig med få kall, er at den
 
 Ved første innlastning av nettsiden må den gjøre noen kall til databasen slik at den kan vise data på nettsiden. Siden det er 7 komponenter i denne nettsiden, har vi valgt å lagre hver komponent for seg i KV-store. Grunnen til dette er fordi hver komponent er ganske omfattende, og vi vil heller gjøre noen ekstra kall enn å laste et stort dataobjekt for hver oppdatering. Derfor blir det umiddelbart 7 kall mot KV-store når siden lastes inn.
 
-Dersom vi ikke hadde designet dataen på denne måten, ville vi støtet på et problem dersom kun noen få studenter oppdateres. For eksempel med «averageGradesByStudyHours» komponentet i et datasett med 100 studenter, der 1 student endret verdi:
+Dersom vi ikke hadde designet dataen på denne måten, ville vi støtet på et problem dersom kun noen få studenter oppdateres. For eksempel med "averageGradesByStudyHours" komponentet i et datasett med 100 studenter, der 1 student endret verdi:
 
 \begin{itemize}
   \item Hente alle studentobjekter fra databasen
