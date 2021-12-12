@@ -1,4 +1,4 @@
-\section{World University Rankings (Kolonnefamiliedatabase)}
+\subsection{World University Rankings (Kolonnefamiliedatabase)}
 
 Først leser vi csv filen med "inferSchema" satt til "true" for å opprette schema.
 \FigureCounter
@@ -20,7 +20,7 @@ Det neste er å lagre den som en Parquet fil
     \includegraphics[width=\textwidth]{images/milepael5/writeParquet.png}
 \end{figure}
 
-\subsection{Første Aggregering}
+\subsubsection{Første Aggregering}
 Den første aggregeringen jeg lagde viser de ti skolene med flest kvinnelige studenter. 
 
 \FigureCounter
@@ -32,7 +32,7 @@ Den første aggregeringen jeg lagde viser de ti skolene med flest kvinnelige stu
     \includegraphics[width=\textwidth]{images/milepael5/resUniFemRatio.png}
 \end{figure}
 
-\subsection{Andre Aggregering}
+\subsubsection{Andre Aggregering}
 Denne er tilsvarende forrige aggregering, men denne gangen for mannlige studenter.
 
 \FigureCounter
@@ -47,7 +47,7 @@ Så lagret jeg begge aggregeringene som CSV filer med én partisjon hver.
     \includegraphics[width=\textwidth]{images/milepael5/writeToFile.png}
 \end{figure}
 
-\subsection{Tredje Aggregering}
+\subsubsection{Tredje Aggregering}
 
 Jeg lagde også en aggregering som viser gjennomsnitts-poeng per år. Denne var, til å begynne med, ment til å representere "Average Total Score by Number Of Students" komponentet fra forrige milepæl:
 

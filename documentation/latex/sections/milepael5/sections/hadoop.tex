@@ -1,15 +1,15 @@
-\section{Endringer på nettsiden}
+\subsection{Endringer på nettsiden}
 
 Vi fant ut i denne milepælen at dynamisk brukerinput ville være vanskelig å inkorporere i noen av aggregeringene, som f.eks land-aggregeringene i dokumentdatabasene. Derfor ville det vært vesentlig mindre brukerinteraksjon på nettsiden.
 
-\section{HDFS}
-\subsection{Listing/remove}
+\subsection{HDFS}
+\subsubsection{Listing/remove}
 hadoop fs -ls hdfs:///		-rm
 
-\subsection{Lese fra HDFS}
+\subsubsection{Lese fra HDFS}
 \txt{code/milepael5/hdfsRead.scala}
 
-\subsection{Kopiere fra local til HDFS}
+\subsubsection{Kopiere fra local til HDFS}
 
 $hadoop fs -copyFromLocal country-profiles.parquet /country-profiles.parquet \newline
 hadoop fs -copyFromLocal university_write.parquet /university-write.parquet \newline
@@ -21,7 +21,7 @@ hadoop fs -copyFromLocal election_write.parquet /election-write.parquet\newline
 //-copyToLocal for motsatt
 $
 
-\subsection{Hva skjer egentlig?}
+\subsubsection{Hva skjer egentlig?}
 Det første vi gjør er å kopiere de lokale parquet-filene til HDFS, det vil fungere ca slik:
 
 
