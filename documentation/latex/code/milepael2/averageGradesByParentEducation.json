@@ -1,0 +1,22 @@
+{
+  "none": {
+    "fatherEducation": 10,
+    "motherEducation": 15
+  },
+  "primaryEducation": {
+    "fatherEducation": 10,
+    "motherEducation": 15
+  },
+  "fifthToNinthGrade": {
+    "fatherEducation": 10,
+    "motherEducation": 15
+  },
+  "secondaryEducation": {
+    "fatherEducation": 10,
+    "motherEducation": 15
+  },
+  "higherEducation": {
+    "fatherEducation": 9,
+    "motherEducation": 14
+  }
+}
