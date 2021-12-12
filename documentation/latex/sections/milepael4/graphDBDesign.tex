@@ -24,7 +24,7 @@ properties, og det er denne som sendes til databasen.
 
 \subsection{Dataobjekter}
 % Aggregering 1 %
-\subsubsection{Regi}
+\subsubsection{Regime Type By Popularity}
 Denne framstiller populariteten blant de forskjellige Regjeringstypene ved å telle opp land.
 
 \FigureCounter
@@ -34,7 +34,50 @@ Denne framstiller populariteten blant de forskjellige Regjeringstypene ved å te
 
 \textbf{Pseudo-Kode}
 \begin{enumerate}
-  \item Register each field from user input
-  \item Save data as an object
-  \item Post object to database
+  \item Count countries relating to each regime type
+  \item Group by tegime type
+\end{enumerate}
+
+% Aggregering 2 %
+\subsubsection{Regime Type Development}
+Denne komponenten viser utviklingen de forskjellige regjeringstypene gjennom årene. I 
+framstillingen brukes et linjediagram.
+
+\FigureCounter
+\begin{figure}[H]
+  \includegraphics[scale=1]{images/milepael4/regimeTypeDevelopment.png}
+\end{figure}
+
+\textbf{Pseudo-Kode}
+\begin{enumerate}
+  \item Get regime types
+  \item Count amount of countries relating to a regime type
+  \item Group by year
+\end{enumerate}
+
+% Aggregering 3 %
+\subsubsection{Most Influential Leader}
+Most Influential Leader viser kun ett resultat. Dette er den lederen som totalt sett har vært oppnådd 
+mest basert på antall Regimer og hvor lenge de har holdt på.
+
+\FigureCounter
+\begin{figure}[H]
+  \includegraphics[scale=1]{images/milepael4/mostInfluentialLeader.png}
+\end{figure}
+
+% Aggregering 4 %
+\subsubsection{Country By Regime Count w/ Regime}
+Dette objektet fremstiller landene som har hatt flest regimer gjennom tidene, i tillegg til 
+Regjeringstypene.
+
+\FigureCounter
+\begin{figure}[H]
+  \includegraphics[scale=1]{images/milepael4/countryByRegimeCountWithRegime.png}
+\end{figure}
+
+\textbf{Pseudo-Kode}
+\begin{enumerate}
+  \item Get Countries and Regimes
+  \item Sum Regime by Countries
+  \item Group by countries
 \end{enumerate}
