@@ -1,1 +1,11 @@
 \section{Alternative løsninger}
+
+\subsection{Hvordan data kan lagres i Cassandra}
+I denne løsningen lagres både rådata og relaterende komponenter i Cassandra. Tanken er å optimalisere antall kall til databasen når datasettet oppdateres, siden komponentene baserer seg på rådataen. I stedet for å oppdatere alle rader med gammel og ny data, oppdaterer den kun de nye radene ved å sjekke hva som allerede finnes i rådataen. På grunn av dette vil antall kall tilsvare antall endrede/nye rader pluss oppdatering i rådataen og komponentene.
+
+Det er også mulig å \textit{kun} lagre komponentene i Cassandra, som betyr vesentlig mindre brukt lagringsplass i databasen. Siden hver kolonne har en primærnøkkel kan denne brukes til å oppdatere dataen i komponentene, men da må hver komponent bli oppdatert individuelt hver gang data oppdateres. Antall kall tilsvarer derfor antall komponenter.
+
+\subsection{Hvordan nettsiden kan hente data}
+Til å begynne med kan frontend koble seg direkte til Cassandra ved å sette opp en Cassandra-klient. Videre kan dataen konverteres til Json objekter, som igjen kan brukes til å framstille dataen på nettsiden. Siden Cassandra ikke tar hensyn til sortering, må dette da gjøres direkte i webapplikasjonen. Dette bør fungere helt fint dersom lagdelingen er god og den \textit{cacher} resultatet, slik at den ikke trenger å utføre transformasjonen hver gang nettsiden lastes på nytt. Siden Cassandra er et AP-system, betyr det at dataen hele tiden er tilgjengelig, som er fint for hyppig henting av dataen som ofte går igjen i webapplikasjoner.
+
+En annen løsning kunne vært å bruke spark-shell til å bearbeide og sende dataen til et rest-api, siden det er en etablert måte å behandle data på i webapplikasjoner. På den måten, kan dataen sorteres før den blir sendt til rest-apiet og det ville vært en logisk lagdeling i webapplikasjonen.
