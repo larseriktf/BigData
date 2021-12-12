@@ -1,0 +1,52 @@
+{
+  "veryLow": {
+    "workDays": {
+      "familyRelation": 3.4,
+      "grade": 12
+    },
+    "weekends": {
+      "familyRelation": 4.9,
+      "grade": 14
+    }
+  },
+  "low": {
+    "workDays": {
+      "familyRelation": 4,
+      "grade": 14
+    },
+    "weekends": {
+      "familyRelation": 3.6,
+      "grade": 11
+    }
+  },
+  "medium": {
+    "workDays": {
+      "familyRelation": 3.1,
+      "grade": 11
+    },
+    "weekends": {
+      "familyRelation": 4.1,
+      "grade": 15
+    }
+  },
+  "high": {
+    "workDays": {
+      "familyRelation": 3.1,
+      "grade": 8
+    },
+    "weekends": {
+      "familyRelation": 2.8,
+      "grade": 12
+    }
+  },
+  "veryHigh": {
+    "workDays": {
+      "familyRelation": 0.8,
+      "grade": 7
+    },
+    "weekends": {
+      "familyRelation": 1.9,
+      "grade": 9
+    }
+  }
+}

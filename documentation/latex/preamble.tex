@@ -1,0 +1,69 @@
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=1cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{changepage}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{changepage}
+\usepackage[parfill]{parskip}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{longtable,booktabs}
+\usepackage{float}
+\usepackage{listings} % For presenting code nicely
+\usepackage{hyperref}
+\usepackage{framed}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% settings %
+\setcounter{secnumdepth}{3} % enumerate
+\setcounter{tocdepth}{3}    % TOC entries
+\renewcommand{\contentsname}{Innholdsfortegnelse}
+\titlespacing*{\paragraph}{\parindent}{1ex}{1em}
+
+% counters %
+\newcounter{figurecounter}
+
+% commands %
+\newcommand*{\FigureCounter}{\stepcounter{figurecounter}\textit{Figur \arabic{figurecounter}}}
+\newcommand{\txt}[1]{\FigureCounter\begin{shaded}\lstinputlisting[language={}]{#1}\end{shaded}}
+\newcommand{\code}[2]{\FigureCounter\begin{shaded}\lstinputlisting[language=#1]{#2}\end{shaded}}
+
+% colors %
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+\definecolor{ccInner}{HTML}{edf3f5}
+\definecolor{ccFrame}{HTML}{f2eee4}
+\definecolor{shadecolor}{named}{ccFrame} 
+
+% lstset %
+\lstset{
+    language=Java,
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    showstringspaces=false,
+    breakatwhitespace=true,
+    commentstyle=\color{pgreen},
+    keywordstyle=\color{pblue},
+    stringstyle=\color{pred},
+    basicstyle=\footnotesize\ttfamily,
+    moredelim=[is][\textcolor{pgrey}]{\%}{\%}
+}

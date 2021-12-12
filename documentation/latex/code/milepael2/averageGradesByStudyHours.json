@@ -1,0 +1,18 @@
+{
+  "lessThanTwo": {
+    "male": 10,
+    "female": 15
+  },
+  "twoToFive": {
+    "male": 15,
+    "female": 15
+  },
+  "fiveToTen": {
+    "male": 14,
+    "female": 15
+  },
+  "greaterThanTen": {
+    "male": 13,
+    "female": 14
+  }
+}
