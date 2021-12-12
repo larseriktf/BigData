@@ -3,7 +3,7 @@ Vi har gjort denne delen på litt forskjellige måter. I første omgang har vi h
 
 Merk at Id-ene i tabellen må ha fnutter("") for at de ikke skal bli lowercase.
 
-\txt{code/createTableForStudent.txt}
+\txt{code/milepael6/createTableForStudent.txt}
 
 \subsection{Transformering og handling}
 Det er viktig å vite hvordan å bruke disse to forskjellige metode-typene i scala. Det viktigste er å huske at transformeringer vil forklare hva slags endringer man ønsker på hvordan data ser ut og presenteres, samt hva som hentes ut, mens handlinger vil faktisk utføre en linje kode og lagre en kopi av den ferdigbehandlede dataen. Transformeringer gjør altså ingenting før en handling kalt. Handlinger er da altså noe som vil gjøre noe med dataen, f.eks. gjøre aggregeringer eller flytte data fra et sted til et annet.
@@ -29,7 +29,7 @@ Det finnes til slutt to forskjellige varianter av transformeringer: Narrow og Wi
 \subsection{Persist, broadcast og join}
 \lstinline{.persist()} brukes for å bevare en kopi av dataen på spesifisert plass lokalt i systemet. Dette gjør at det er mye mer lettvint å gjenbruke dataen, da man kun gjør nødvendige kall mot databasen/oppretter verdien én gang.
 
-\code{Scala}{code/joinCode.scala}
+\code{Scala}{code/milepael6/joinCode.scala}
 
 I denne kodebiten så har vi hentet ut en seksjon av dataframen(DF) og brukt \lstinline{.persist(MEMORY_ONLY)} for å lagre til kun minne. \lstinline{Type} persist settes basert på størrelsen til dataen, deretter broadcaster vi denne DF-en, som betyr at vi sender en \textit{read-only} kopi til hver av executorene som gjør en handling, som da vil fyre av persistence-kallet. Dette skjer slik på grunn av lazy loading.
 
@@ -44,5 +44,5 @@ Grunnen til at man kan ønske å gjøre dette er ved bruk av et større og et mi
 \subsection{Neo4j MERGE}
 Vi valgte å integrere mot Neo4j med 2 datasett og koble disse sammen.
 
-\code{Scala}{code/graphDBcode.scala}
+\code{Scala}{code/milepael6/graphDBcode.scala}
 Her har vi da hentet ut de forskjellige datasettene og lagt de inn med nøkler på hver sine "id"-er. Deretter har vi lagt relasjonen på regimetype. Vi kan da hente inn alle landene som har hatt x regimetype.
