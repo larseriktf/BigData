@@ -1,11 +1,11 @@
 \section{Milepæl 2}
 \subsection{Introduksjon}
-I denne milepælen har vi funnet et nytt datasett til nettsiden vår. Vi har gått bort ifra musikk-konseptet fra tidligere milepæl, da det ikke var gunstig for funksjonalitet på nettsiden. Datasettet vi har valgt for KV-store inneholder data fra undersøkelser gjort på to skoler i Portugal for å se hvordan studentene opptrer på skolen. Datasettet heter Student Performance Data Set og kan finnes her:
+I denne milepælen har vi fokusert på å designe og implementere School-performance datasettet opp mot KV-store. Grunnen til at dette settet passer utmerket til KV er fordi vi ønsker å ha god fleksibilitet på dataen. Fleksibilitet og konsistens blir de viktigste aspektene for dette settet da det vil falle seg naturlig at elever slutter og starter på skolen, det gjennomføres nye prøver, eller fritids-situasjonen til elever kan endre seg. Siden dataen som måles er såpass lite rigid av seg selv, er det da en fordel at det lett kan gjøres endringer, legge til ny data, eller fjerne data. Disse tilfellene vil føre til at konsistens blir viktig da forskjellige personer skal kunne ha tilgang til å endre data, og hyppige endringer må kunne sjekkes mot tidligere versjoner.
 
 Datasett: https://www.kaggle.com/larsen0966/student-performance-data-set/version/2
 
 \subsection{Hvordan kommer data inn?}
-Databasen vi har valgt tar utgangspunktet i et datasett som bruker data fra en undersøkelse på studenter fra to skoler i Portugal. For at ny data skal bli lagt inn i databasen, må det gjøres enda en undersøkelse ved enten de samme skolene eller en ny skole. Dataen må deretter legges inn via nettskjemaet med følgende felt på nettsiden
+Databasen vi har valgt tar utgangspunktet i et datasett som bruker data fra en undersøkelse på studenter fra to skoler i Portugal. For at ny data skal bli lagt inn i databasen, må det gjøres enda en undersøkelse ved enten de samme skolene eller en ny skole. Dataen må deretter legges inn via nettskjemaet med følgende felt på nettsiden:
 
 \begin{itemize}
   \item Skole
@@ -36,7 +36,7 @@ Databasen vi har valgt tar utgangspunktet i et datasett som bruker data fra en u
 Totalt er det 22 felt som må fylles ut, men når dette er sagt kommer mange av feltene til å ha standardverdier. I tillegg til nettskjemaet vil det være mulig å laste opp datasett i form av CSV eller JSON som har de samme kolonnene. Rader som er duplikater, vil ikke bli tatt hensyn til siden det er mulig å produsere de samme verdiene. Dette vil si at noen må manuelt legge til data via nettsiden for at dataen skal dukke opp i databasen, den vil ikke lytte etter endringer i datasettet via API-er.
 
 \subsection{RIAK eller ETCD}
-I prosjektet vårt har vi bestemt oss for å bruke ETCD, siden ETCD prioriterer konsistent data over tilgjengelighet. Dette er viktig, siden for dette prosjektet er det mye viktigere at dataen stemmer, enn å ha rask respons-tid. Hele hensikten med nettsiden er å forstå studiene som er tatt ved de forskjellige skolene, derfor må dataen være oppdatert. Siden CAP-teoremet gjelder i praksis kun når det oppstår en nodefeil, betyr det ikke at vi ofrer tilgjengelighet fullstendig, men det er mindre viktig i det tilfelle enn konsistens. Til slutt er det merkverdig å nevne at Riak er mye mer omfattende enn ETCD, derfor blir det også foretrukket i prosjektet.
+I prosjektet vårt har vi bestemt oss for å bruke ETCD, siden ETCD prioriterer konsistensen til dataen over tilgjengelighet. Dette er viktig, siden for dette prosjektet er det mye viktigere at dataen stemmer, enn å ha rask respons-tid. Hele hensikten med denne seksjonen er å forstå effekten studenters bakgrunn har på resultatene ved de forskjellige skolene, derfor må dataen være oppdatert. Siden CAP-teoremet gjelder i praksis kun når det oppstår en nodefeil, betyr det ikke at vi ofrer tilgjengelighet fullstendig, men det er mindre viktig i dette tilfellet enn konsistens. Til slutt er det merkverdig å nevne at Riak er mye mer omfattende enn ETCD, derfor blir det også foretrukket i prosjektet.
 
 \subsection{Design av nøkkel}
 På grunn av måten vi velger å oppdatere eksisterende data i databasen, blir nøklene designet på en måte som skiller mellom komponenter og ny studentdata. Komponentene er JSON-objektene som brukes til å vise data på nettsiden, mens studentdataen er rådata som er nyttig for å holde dataen oppdatert. Hvis en student legges til eller oppdateres, oppdateres også komponentene i databasen. Den generelle strukturen på nøkkelen vil derfor være et prefiks for inndeling, etterfulgt av kolon, etterfulgt av navn eller id.
@@ -45,13 +45,17 @@ Verdier relatert til komponenter vil ha en nøkkel med prefiks "component" etter
 
   component:studentByFreeTime
 
+
 Verdier relatert til studenter vil ha nøkler med prefiks "student" etterfulgt av en 8-sifret id av typen Integer. Eksempel på en nøkkel for en student i vår KV-store:
 
   student:02381225
 
 KV-store vil dermed følge en lignende struktur:
 
-HER SKAL DET VÆRE EN TABELL FRA PDF-EN
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{images/milepael2/tabellKVStore.png}
+\end{figure}
 
 \subsection{Design av dataobjekter og aggregeringer}
 Som tidligere nevnt har vi delt opp dataobjektene i to grupper: komponenter og student-data. Grunnen til denne oppdelingen er for å optimalisere ytelse ved uthenting og oppdatering av data. Oppdelingen gjør det mulig å oppdatere individuelle komponenter ved å kun lese fra student-dataen som endret seg. Da unngår man å hente alle student-dataene for å oppdatere alle komponentene, og som resultat bruker nettsiden mindre kall til databasen.
