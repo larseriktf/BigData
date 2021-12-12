@@ -1,0 +1,41 @@
+1. read csv without inferSchema
+2. then I read it with inferSchema, but notice some datatypes doesnt match
+3. I notice that something is wrong with following columns:
+	- world_rank: String - this is OK, since it sometimes contains values such as "100-150"
+	- international: included the "-" where value should be "null"
+		> same with income, total_score, and num_students
+	- international_students included the "%"
+4. I opened libreoffice and used the find&replace feature to fix these issues
+	- Kunne ha løst dette med .option("mode", "DROPMALFORMED")
+5. I assigned universityDf again, and uses printSchema to make sure it was correct, and sure it was!
+6. I tested a simple aggregation on it, and sorted by number of students in descending order
+--
+7. Wrote base file as parquet
+8. Now I want to write my first aggregation
+9. Wrote my first aggregation (avgScoreByYear) and wrote it to csv
+
+10. Finished components for university by female/male ratio
+11. Now ready to start on graph database
+
+12. Made parquet from REGIME_2021.csv
+13. About to make parquet from regime_list.csv, but notice that dates are string in schema
+	1. I need to replace values such as m/d/yyyy with mm-dd-yyyy and save as CSV
+	2. I need to use .option("timestampFormat", "mm-dd-yyyy")
+	- Jeg gav opp, dette var for vanskelig
+	- Tankegangen min var å legge på 0-er foran tall med lengde på 1 i den date-arrayen
+
+14. Make parquet from leader_6_21.csv
+	> Notice some inaccuracies in the csv file, will solve this by removing the last columns
+	> Done
+
+16. Make parquet from election_6_21.csv
+	> Notice that elec_day is set to string by inferSchema, replacing spaces with null
+	> tried using .option("treatEmptyValuesAsNull", "true") but obviously didn't work
+	> Done
+
+17. Now ready to make aggregations for Regime dataset
+	- Going to make Regyme Type Development (Government development) Component
+18. Loads REGIME_2021 parquet
+	- Retrieved data, but not in the right format
+	- Tried again, this time by having a column for each government type
+

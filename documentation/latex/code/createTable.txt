@@ -1,0 +1,36 @@
+CREATE TABLE university_rating (
+    id INT PRIMARY KEY,
+    world_rank TEXT,
+    university_name TEXT,
+    country TEXT,
+    teaching DOUBLE,
+    international DOUBLE,
+    research DOUBLE,
+    citations DOUBLE,
+    income DOUBLE,
+    total_score DOUBLE,
+    num_students INT,
+    student_staff_ratio DOUBLE,
+    international_students TINYINT,
+    female_male_ratio TEXT,
+    year SMALLINT
+);
+
+CREATE TABLE university.female_ratio (
+    id INT PRIMARY KEY,
+    country TEXT,
+    university_name TEXT,
+    female_ratio INT
+);
+
+CREATE TABLE university.male_ratio (
+    id INT PRIMARY KEY,
+    country TEXT,
+    university_name TEXT,
+    male_ratio INT
+);
+
+CREATE TABLE university.average_score_per_year (
+    year SMALLINT PRIMARY KEY,
+    average_score DOUBLE
+);
