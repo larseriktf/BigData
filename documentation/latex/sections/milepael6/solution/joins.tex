@@ -3,6 +3,11 @@ Vi har gjort denne delen på litt forskjellige måter. I første omgang har vi h
 
 Merk at Id-ene i tabellen må ha fnutter("") for at de ikke skal bli lowercase.
 
+
+
+
+\large
+Lager en Cassandra-tabell på edu.parents keyspacet
 \txt{code/milepael6/createTableForStudent.txt}
 
 \subsection{Transformering og handling}
@@ -20,10 +25,13 @@ Det finnes fire kategorier for transformeringer og handlinger:
 \subsubsection{Narrow og Wide tranformering}
 Det finnes til slutt to forskjellige varianter av transformeringer: Narrow og Wide. Narrow transformeringer er når partisjonen til forelder RDD-en brukes på det meste av en partisjon av barne RDD-en. Wide tranformering er når flere barne-RDD partisjoner er avhengige av én forelder-RDD partisjon, i tillegg vil en wide-tranformering innebære en "shuffling"(omstokking) av data fordi den samma dataen kan være tilgjengelig på flere partisjoner. Å unngå omstokking av data vil passe på ytelsen i programmet.
 
+\FigureCounter
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{images/transformActionPic.png}
-    \caption{Illustrasjon av narrow og wide transformasjon.}
+    Illustrasjon av narrow og wide transformasjon.
+    
+    https://training.databricks.com/visualapi.pdf
 \end{figure}
 
 \subsection{Persist, broadcast og join}
