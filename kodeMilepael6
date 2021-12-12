@@ -119,6 +119,10 @@ val df = spark.read.option("header","true").csv("student-performance.csv")
 echo "deb http://www.apache.org/dist/cassandra/debian 40x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
 
 
+spark-shell --jars neo4j-connector-apache-spark_2.12-4.1.0_for_spark_3.jar
+
+
+
 val regime = PDF.select($"cowcode".as("source.cowcode"), $"gwf_country".as("source.country"), $"gwf_casename".as("source.casename"), $"gwf_startdate".as("source.startdate"), $"gwf_enddate".as("source.enddate"), $"gwf_regimetype".as("source.regimetype")).distinct()
 
 
