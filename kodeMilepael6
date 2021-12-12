@@ -125,7 +125,7 @@ spark-shell --jars neo4j-connector-apache-spark_2.12-4.1.0_for_spark_3.jar
 
 val regime = PDF.select($"cowcode".as("source.cowcode"), $"gwf_country".as("source.country"), $"gwf_casename".as("source.casename"), $"gwf_startdate".as("source.startdate"), $"gwf_enddate".as("source.enddate"), $"gwf_regimetype".as("source.regimetype")).distinct()
 
-
+//NEO4J WRITE
 regime.write.format("org.neo4j.spark.DataSource").mode("Overwrite").option("url", "bolt://localhost:7687").option("authentication.basic.username", "neo4j").option("authentication.basic.password", "student").option("labels", ":Regime ").option("node.keys", "source.casename").save()
 
 
@@ -133,6 +133,7 @@ val reignDf = PDF.select($"ccode".as("source.ccode"), $"country".as("source.coun
 
 reignDf.write.format("org.neo4j.spark.DataSource").mode("Overwrite").option("url", "bolt://localhost:7687").option("authentication.basic.username", "neo4j").option("authentication.basic.password", "student").option("labels", ":Reign").option("node.keys", "source.ccode").save()
 
+//NEO4J READ
 val df = spark.read.format("org.neo4j.spark.DataSource").option("url", "bolt://localhost:7687").option("authentication.basic.username", "neo4j").option("authentication.basic.password", "student").option("relationship", "HAD_REGIME").option("relationship.source.labels", "Reign").option("relationship.target.labels", "Regime").load()
 
 must use `` when (.dot) is used in names
