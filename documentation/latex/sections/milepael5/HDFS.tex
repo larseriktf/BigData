@@ -7,28 +7,21 @@ hadoop fs -ls hdfs:///		-rm
 
 \subsubsection{Kopiere fra local til HDFS}
 
-$hadoop fs -copyFromLocal country-profiles.parquet /country-profiles.parquet \newline
-hadoop fs -copyFromLocal university_write.parquet /university-write.parquet \newline
-hadoop fs -copyFromLocal student-performance.parquet /student-performance.parquet \newline
-hadoop fs -copyFromLocal reign_write.parquet /reign-write.parquet\newline
-hadoop fs -copyFromLocal regime_write.parquet /regime-write.parquet\newline
-hadoop fs -copyFromLocal leader_write.parquet /leader-write.parquet\newline
-hadoop fs -copyFromLocal election_write.parquet /election-write.parquet\newline
-//-copyToLocal for motsatt
-$
+\txt{code/milepael5/hadoop.txt}
 
 \subsubsection{Hva skjer egentlig?}
 Det første vi gjør er å kopiere de lokale parquet-filene til HDFS, det vil fungere ca slik:
 
-
 \begin{enumerate}
-    \item ber namenode om å opprette en fil. Namenode vil returnere en liste over noder for å lage replika blokker (første replika er lokalt plassert, andre på en annen rack, tredje på samme rack som replika 2)
-    \subitem Bare en replika per node 
-    \subitem To replika per rack(om det er nok racks)
-    \item blokkdata skrives da til første node i namenode listen
-    \item ber namenode å hente ut neste sett med blokklokasjoner, skriv blokken
-    \item informerer namenode om at filen er ferdig skrevet og gjør filen tilgjengelig
+  \item Ber namenode om å opprette en fil. Namenode vil returnere en liste over noder for å lage replika blokker (første replika er lokalt plassert, andre på en annen rack, tredje på samme rack som replika 2)
+  \begin{enumerate}
+    \item Bare en replika per node 
+    \item To replika per rack(om det er nok racks)
   \end{enumerate}
+  \item Blokkdata skrives da til første node i namenode listen
+  \item Ber namenode å hente ut neste sett med blokklokasjoner, skriv blokken
+  \item Informerer namenode om at filen er ferdig skrevet og gjør filen tilgjengelig
+\end{enumerate}
 
 
 Nå som det er lagret på noder i HDFS kan vi da hente ut parquet-filene derfra via Spark med read-kommando og gjøre aggregeringer.

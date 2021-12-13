@@ -1,0 +1,10 @@
+// universityByFemaleRatio
+SELECT country, university_name, female_ratio
+FROM university.female_ratio
+
+// universityByMaleRatio
+SELECT country, university_name, male_ratio
+FROM university.male_ratio
+
+// averageScorPerYear
+SELECT * FROM university.average_score_per_year
