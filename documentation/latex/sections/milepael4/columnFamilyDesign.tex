@@ -1,4 +1,4 @@
-\subsection{Design av Kolonnefamiliedatabase}
+\subsection{Design av kolonnefamiliedatabasen}
 Her brukte vi datasettet "World University Rankings" med Times Higher Education World University Ranking metodikken fra Kaggle:
 
 https://www.kaggle.com/mylesoneill/world-university-rankings?select=timesData.csv
@@ -41,9 +41,9 @@ DELETE <identifier> FROM <table name> WHERE <condition>;
   \item Data oppdateres på aktuelle noder
 \end{itemize}
 
-\subsection{Dataobjekter}
+\subsubsection{Dataobjekter}
 % Aggregering 1 %
-\subsubsection{Rådata}
+\textbf{Rådata}\\
 Dette dataobjektet representerer rådata brukes til å oppdatere dataen i databasen. Dette objektet 
 opprettes når ny data blir lest inn, eller når bruker legger inn selv.
 
@@ -60,7 +60,7 @@ opprettes når ny data blir lest inn, eller når bruker legger inn selv.
 \end{enumerate}
 
 % Aggregering 2 %
-\subsubsection{Top 10 Universities By Diversity}
+\textbf{Top 10 Universities By Diversity}\\
 I dette dataobjektet rangeres hvert universitet ut ifra en ny faktor som vi har skapet kalt "Diversity 
 Score". Dette er en sammenslåing av følgende felt fra Rådata-objektet: Number of Students, 
 International Students, Female To Male. På denne måten kan man få en oversikt over hvilke skoler 
@@ -79,7 +79,7 @@ som har mest mangfoldig studentmiljø. Til slutt skal dette ha en limit på 10.
 \end{enumerate}
 \pagebreak
 % Aggregering 3 %
-\subsubsection{Average Total Score By Number Of Students}
+\textbf{Average Total Score By Number Of Students}\\
 Dette objektet visualiserer total score innenfor hvert intervall of studentmengder. Dette kan være 
 interessant for å se om kvaliteten på universitetet.
 
