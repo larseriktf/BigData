@@ -1,0 +1,1 @@
+val governmentPopularity = reignPDf.groupBy(col("year"), col("government")).agg(count("*")).as("count").orderBy(asc("year"), asc("government"))
