@@ -3,14 +3,17 @@ Her brukte vi datasettet "Socio-Economic Country Pofiles" fra Kaggle:
 
 https://www.kaggle.com/nishanthsalian/socioeconomic-country-profiles
 
-\subsubsection{Hvorfor kolonnedatabase?}
+
+\textbf{Hvorfor kolonnedatabase?}
+
 I hovedårsak er det gunstig å bruke dokument-orientert database med dette settet da vi kun trenger å organisere basert på land, og vil gjøre svært få kall mot databasen. Aggregeringene våre kan i flere tilfeller da ligge som referanser i hvert land, og vil heller eksistere som sine egne dokumenter. Ved endringer i datasettet vil aggregeringer kjøres på nytt, og endre verdiene i disse dokumentene. Grunnen til at dette kan være til fordel er hvor tungt det fort blir med mange kall mot dokument-orienterte databaser, så det viktigste blir konsistens på dataen. Når data oppdateres i her vil kun dokumentene som er påvirket av endringene ha operasjoner utført på de.
 
 Mange aggregeringer er også mye raskere å få gjort i denne typen database da man henter ut et helt dokument ved spørringen, og alt informasjonen den inneholder. Dette gjør at man slipper å gjøre søk på tvers av tabeller eller må gjøre mere komplekse nøstede spørringer. I tillegg er det en veldig god modell for databaser som ikke gjør veldig mange endringer ofte, hvor tilgang til replika versjoner av data gir redundans ved mange spørringer og holder ytelsen oppe.
 
 En av de aller mest interessante delene av denne typen database er indeksering, og hvordan det kan brukes for å gjøre at spørringer blir mye billigere. Indeksering tillater også da å lagre spørringer rett i RAM, men det krever at man har plass til hele settet man arbeider med også. I vår aggregering som tar inn brukerspesifiserte land og sammenligner kostnad kan potensielt være større da den kun trenger å holde det nyeste resultatet fra hver spørring.
 
-\subsubsection{Country-Dokument}
+\textbf{Country-Dokument}
+
 \begin{itemize}
   \item Country: “CountryName”
   \item Population In Thousands: float
@@ -41,9 +44,10 @@ En av de aller mest interessante delene av denne typen database er indeksering, 
   \item Tax revenue: percent of GDP
 \end{itemize}
 
-\subsection{Aggregeringer}
+\subsubsection{Aggregeringer}
 % Aggregering 1 %
-\subsubsection{Hva er verdens høyeste beskattende land etter GDP.}
+\textbf{Hva er verdens høyeste beskattende land etter GDP.}
+
 Denne aggregeringen kan bli lagret i databasen som et eget dokument da det ikke er noe som endrer seg ofte. Dette gjør det lett å hente ut tabellen, og heller flere redundanskopier av dokumentet gjør at det blir lett tilgjengelig selv ved høy trafikk i databasen.
 
 \FigureCounter
@@ -59,7 +63,8 @@ Denne aggregeringen kan bli lagret i databasen som et eget dokument da det ikke 
 \end{enumerate}
 
 % Aggregering 2 %
-\subsubsection{Livskvalitet etter skatt}
+\textbf{Livskvalitet etter skatt}
+
 Denne aggregeringen er en av de mer komplekse vi har, denne spørringen gjøres mot en Multikey Index i landsdokumentene som gjør at den kun trenger å gjøre denne spørringen når data endrer seg. Alternativt kan spørringen lagres som et eget dokument med referanse til landene. Å lagre til dokument kan potensielt være billigere da man heller kan hente ut dette ved hver read, men å indeksere vil gjøre at færre interaksjoner vil skje med unødvendige dokumenter.
 
 \FigureCounter
@@ -77,7 +82,8 @@ Denne aggregeringen er en av de mer komplekse vi har, denne spørringen gjøres 
 \end{enumerate}
 
 % Aggregering 3 %
-\subsubsection{Land sammenlignet etter kost}
+\textbf{Land sammenlignet etter kost}
+
 Denne aggregeringen er veldig billig ytelsesmessig med kun databasekall for å hente ut landene som blir valgt i menyene. Vi kan da kun sette nødvendige dokumenter i aggregeringspipelinen. Disse landene (…Y) kan da sjekkes mot verdien satt i hovedland(X), og så postes med riktig streng verdi. Dette kan gjøres via On-Demand Materialized Views.
 
 Her vil det bli kjørt da n+1 spørringer mot databasen hvor n = antall Y. Det vil så bli aggregert fra pipeline som en array.
@@ -88,6 +94,7 @@ For denne spørringen gir det mening å bruke en indeks som har referanse til al
 \begin{figure}[H]
   \includegraphics[scale=0.5]{images/milepael3/countriesComparedByExpensiveness.png}
 \end{figure}
+Denne aggregeringen tar for seg utvalgt land, og sammenligner hvor dyrt det er å bo der, eller reise dit, i forhold til andre populære destinasjoner.
 
 \textbf{Pseudo-Kode}
 \begin{enumerate}
@@ -99,7 +106,7 @@ For denne spørringen gir det mening å bruke en indeks som har referanse til al
   \item Post aggregering
 \end{enumerate}
 
-\subsection{Endring i data}
+\subsubsection{Endring i data}
 \begin{enumerate}
   \item Ny data kommer inn
   \item Landsdokumentene som blir påvirket vil endre informasjon
