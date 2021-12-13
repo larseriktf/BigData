@@ -49,15 +49,12 @@ Vi endte opp med å ikke bruke dette dataobjektet, fordi det var mer utfordrende
 
 \pagebreak
 % Aggregering 3 %
-\textbf{Average Total Score By Number Of Students}\\
-Dette objektet visualiserer total score innenfor hvert intervall of studentmengder. Dette kan være 
-interessant for å se om kvaliteten på universitetet.
-
-Vi endte opp med å ikke bruke denne aggregeringen, fordi student-aksen var for vanskelig å hente ut.
+\textbf{Average Score Per Year}\\
+Denne aggregeringen visualiserer gjennomsnittet av den sammenlagte poengsummen fra alle skoler per år. Dette kan være interessant for å se hvilke år som gikk generelt gikk bedre eller verre for studenter rundt om i verden.
 
 \FigureCounter
 \begin{figure}[H]
-  \includegraphics[scale=1]{images/milepael4/averageScoreByStudents.JPG}
+  \includegraphics[scale=0.5]{images/milepael4/averageScorePerYear.JPG}
 \end{figure}
 
 \textbf{Pseudo-Kode}
@@ -115,9 +112,10 @@ Det neste er å opprette selve tabellene i Cassandra via \lstinline{CREATE TABLE
 \txt{code/milepael4/createTable.txt}
 
 \subsubsection{Hente ut data}
-\txt{code/milepael4/getData.txt}
+\txt{code/milepael4/getDataColumnDB.txt}
 
 \subsubsection{Sette inn data}
+\txt{code/milepael4/insertDataColumnDB.txt}
 
 \subsubsection{Hvordan eksisterende data oppdateres}
 \begin{itemize}
