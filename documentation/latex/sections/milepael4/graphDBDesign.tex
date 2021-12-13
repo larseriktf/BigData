@@ -1,9 +1,7 @@
-\pagebreak
-\subsection{Design av Grafdatabase}
-Her brukte vi datasettet "Government Types of the World" fra Kaggle:
 
+\subsection{Design av grafdatabasen}
+Her brukte vi datasettet "Government Types of the World".
 
-https://www.kaggle.com/janzasadny/rulers-elections-and-irregular-governance
 \subsubsection{Representasjon av nodene og relasjonene mellom de}
 \FigureCounter
 \begin{figure}[H]
@@ -25,9 +23,9 @@ komponenetene. Måten vi tenker at dette gjøres er at brukeren oppretter en ny 
 plottes inn i databasen. For eksempel, kan brukeren opprette en ny leder-node med tilhørende 
 properties, og det er denne som sendes til databasen.
 
-\subsection{Dataobjekter}
+\subsubsection{Dataobjekter}
 % Aggregering 1 %
-\subsubsection{Regime Type By Popularity}
+\textbf{Regime Type By Popularity}\\
 Denne framstiller populariteten blant de forskjellige Regjeringstypene ved å telle opp land.
 
 \FigureCounter
@@ -42,10 +40,9 @@ Denne framstiller populariteten blant de forskjellige Regjeringstypene ved å te
 \end{enumerate}
 
 % Aggregering 2 %
-\subsubsection{Regime Type Development}
+\textbf{Regime Type Development}\\
 Denne komponenten viser utviklingen de forskjellige regjeringstypene gjennom årene. I 
 framstillingen brukes et linjediagram.
-
 
 \FigureCounter
 \begin{figure}[H]
@@ -60,10 +57,9 @@ framstillingen brukes et linjediagram.
 \end{enumerate}
 
 % Aggregering 3 %
-\subsubsection{Most Influential Leader}
+\textbf{Most Influential Leader}\\
 Most Influential Leader viser kun ett resultat. Dette er den lederen som totalt sett har vært oppnådd 
 mest basert på antall Regimer og hvor lenge de har holdt på.
-
 
 \FigureCounter
 \begin{figure}[H]
@@ -71,7 +67,7 @@ mest basert på antall Regimer og hvor lenge de har holdt på.
 \end{figure}
 
 % Aggregering 4 %
-\subsubsection{Country By Regime Count w/ Regime}
+\textbf{Country By Regime Count w/ Regime}\\
 Dette objektet fremstiller landene som har hatt flest regimer gjennom tidene, i tillegg til 
 Regjeringstypene.
 
