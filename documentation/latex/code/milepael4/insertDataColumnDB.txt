@@ -1,0 +1,11 @@
+// universityByFemaleRatio
+INSERT INTO university.female_ratio (id, country, university_name, female_ratio)
+VALUES(1, "Norway", "Hiof", 50);
+
+// universityByMaleRatio
+INSERT INTO university.male_ratio (id, country, university_name, female_ratio)
+VALUES(1, "Norway", "Hiof", 50);
+
+// averageScorePerYear
+INSERT INTO university.average_score_per_year (year, average_score)
+VALUES(2017, 85);

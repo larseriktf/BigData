@@ -1,0 +1,48 @@
+\textbf{Dataobjektene}
+
+Her er en visuell femstilling av de forskjellige komponentene/dataobjektene med tilsvarende Json objekt og representasjon på nettsiden. Dette er for å illustrere hvordan vi ønsker at dataobjektene skal se ut. For hvert dataobjekt Vil det stå beskrevet hvordan data aggregeres, samt pseudo-kode på hvordan dataen hentes ut.
+
+\textbf{Rådata}
+\txt{code/milepael2/rawObject.json}
+
+\textit{Dette dataobjektet er en en-til-en representasjon av en rad i datasettet og representerer en student.}
+
+\textbf{Dataobjekt 1}
+
+\txt{code/milepael2/averageGradesByStudyHours.json}
+
+Dette dataobjektet tar for seg den gjennomsnittlige karakteren for begge kjønn etter hvor mange timer de studerer i uken. Det er representert som et søylediagram i nettsiden. Her samler vi 4 grupper, en for hver tidsbergening, som hver splittes i to basert på kjønn, så regnes snitt-karakter.
+
+Her må en da koble til db, et kall mot db kjøres for å hente ut alle karakterer til elevene. Elevene blir så filtrert etter groupBy på studietid, deretter blir de sortert og lagt sammen på kjønn. Navn på kolonner må byttes, og settene må legges sammen. Til slutt tas gjennomsnittet, så skrives det til fil i db.
+
+Vi gjør altså transformeringer av dataen, for å gjøre den logisk å arbeide med, og for å skape meningsfulle datasett det er mulig å gjøre aggregeringer på(groupBy, sort). Det vil si at det er ingenting som gjøres på serveren før handlingen kjøres. Handlinger blir da selve aggregerings-kallene (load, count, agg, save)
+
+
+\textbf{Dataobjekt 2}
+
+\txt{code/milepael2/studentsByFreeTime.json}
+
+Her viser dataobjektet prosentvis hvor mye fritid studentene har. Studenter grupperes etter hvor mye fritid de har, henter kun ut hvor stor hver gruppe er, så regnes 
+det ut hvor stor hver gruppe er av totalen og prosent-verdien deres vises.
+
+Prosessen vil være lik forrige aggregering.
+
+\textbf{Dataobjekt 3}
+
+\txt{code/milepael2/averageGradesByParentEducation.json}
+
+Denne grafen tar for seg et dataobjekt som samler mors og fars utdanningsnivå og viser karakterene barna har. Her hentes studentenes karakterer ut og legges inn i en gruppe for mors utdanningnivå, og en gruppe for fars, så snittes karakterene innad i disse gruppene.
+
+\textbf{Dataobjekt 4}
+
+\txt{code/milepael2/freeTimeByStudyHours.json}
+
+Dette objektet viser hvor mye fritid studenter har i forhold til hvor mye de studerer. I dette dataobjektet må vi hente ut studenter i grupper etter hvor mye de jobber med skole på egen tid, og finner gjennomsnittet av hvor mye fritid de har på skalaen.
+
+\textbf{Dataobjekt 5}
+
+\txt{code/milepael2/familyRelationsAndAverageGradesByAlcohol.json}
+
+Dataobjektet viser hvor mye alkohol en student drikker(delt etter helg og hverdag), hvordan forholdet studenten har til familien sin er, og hvordan dette påvirker karakterene i gjennomsnitt. I dette objektet henter vi ut grupper på lignende måte som i dataobjekt 6. Vi skaper da også 5 hovedgrupper med 2 subgrupper hver, en for helg og en for ukedag, og i hver av disse gruppene legges karakter og familie forhold inn og det utregnes gjennomsnitt. 
+
+Denne aggregeringen vil ha mange operasjoner og vil være treg, men dataen har ikke noe særlig krav om å være lett tilgjengelig, eller at den må lastes spesielt fort, da det heller er viktig at dataen er korrekt.

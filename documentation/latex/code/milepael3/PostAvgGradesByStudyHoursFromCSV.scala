@@ -76,7 +76,8 @@ object AverageGradesByStudyHours extends App {
     
     val spock = new Gson().toJson(avgGradesByStudyHours);
 
-    val post = new HttpPost("http://127.0.0.1:2379/v2/keys/component%3AaverageGradesByStudyHours");
+    val post = new HttpPost(
+        "http://127.0.0.1:2379/v2/keys/component%3AaverageGradesByStudyHours");
 
     val nameValuePairs = new ArrayList[NameValuePair]();
     nameValuePairs.add(new BasicNameValuePair("value", spock));

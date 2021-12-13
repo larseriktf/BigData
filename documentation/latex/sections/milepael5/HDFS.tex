@@ -1,0 +1,36 @@
+\subsection{HDFS}
+\subsubsection{Listing/remove}
+hadoop fs -ls hdfs:///		-rm
+
+\subsubsection{Lese fra HDFS}
+\code{Scala}{code/milepael5/hdfsRead.scala}
+
+\subsubsection{Kopiere fra local til HDFS}
+
+\txt{code/milepael5/hadoop.txt}
+
+\subsubsection{Hva skjer egentlig?}
+Det første vi gjør er å kopiere de lokale parquet-filene til HDFS, det vil fungere ca slik:
+
+\begin{enumerate}
+  \item Ber namenode om å opprette en fil. Namenode vil returnere en liste over noder for å lage replika blokker (første replika er lokalt plassert, andre på en annen rack, tredje på samme rack som replika 2)
+  \begin{enumerate}
+    \item Bare en replika per node 
+    \item To replika per rack(om det er nok racks)
+  \end{enumerate}
+  \item Blokkdata skrives da til første node i namenode listen
+  \item Ber namenode å hente ut neste sett med blokklokasjoner, skriv blokken
+  \item Informerer namenode om at filen er ferdig skrevet og gjør filen tilgjengelig
+\end{enumerate}
+
+
+Nå som det er lagret på noder i HDFS kan vi da hente ut parquet-filene derfra via Spark med read-kommando og gjøre aggregeringer.
+
+\begin{enumerate}
+    \item I average-grades.csv aggregeringen(aggregering 1) henter først ut hele listen fra HDFS og legger det i en dataframe.
+    \item Etter det lages det to Row() elementer som holder på hver sin del av dataen, en for fars utdanning og en for mors
+    \item . Etter det gjør vi en joinWith på dataen, og legger de sammen basert på verdien i utdanningsnivå som er 0-4.
+    \item Når har vi en dataframe bestående av to structs som vi bytter navn på
+    \item Vi "flater" så ut struct-typen som har blitt skapt av den tidligere joinWith for å pakke ut til to hovedgrupper.
+    \item Til slutt skrives filen til disk som csv fil, eller den kan skrives til HDFS.
+  \end{enumerate}

@@ -1,0 +1,17 @@
+val governmentPopularityByYear = reignPDf.groupBy("year").agg(
+    count(when(col("government") === "Presidential Democracy", true)).as("presidential_democracy"),
+    count(when(col("government") === "Parliamentary Democracy", true)).as("parliamentary_democracy"),
+    count(when(col("government") === "Personal Dictatorship", true)).as("personal_dictatorship"),
+    count(when(col("government") === "Party-Personal", true)).as("party-personal"),
+    count(when(col("government") === "Provisional - Military", true)).as("provisional_military"),
+    count(when(col("government") === "Military", true)).as("military"),
+    count(when(col("government") === "Military-Personal", true)).as("military_personal"),
+    count(when(col("government") === "Provisional - Civilian", true)).as("provisional_civilian"),
+    count(when(col("government") === "Foreign/Occupied", true)).as("foreign/occupied"),
+    count(when(col("government") === "Dominant Party", true)).as("dominant_party"),
+    count(when(col("government") === "Indirect Military", true)).as("indirect_military"),
+    count(when(col("government") === "Party-Military", true)).as("party-military"),
+    count(when(col("government") === "Party-Personal-Military Hybrid", true)).as("party-personal-military_hybrid"),
+    count(when(col("government") === "Oligarchy", true)).as("oligarchy"),
+    count(when(col("government") === "Monarchy", true)).as("monarchy"),
+    count(when(col("government") === "Warlordism", true)).as("warlordism"))

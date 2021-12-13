@@ -1,0 +1,39 @@
+\subsubsection{Ytelse og oppdatering av data}
+På grunn av konsistens-kriterier for vår data, må read-kallene gjøres lineært som vil ta mer tid enn serialiserte kall. Ofte vil vi kun bruke et kall for å hente ut data, og heller bruke ytelsen til systemet for operasjoner på denne dataen.
+
+En av grunnene til at dataen vil være lett tilgjengelig med få kall, er at den ikke nødvendigvis vil endre seg ofte (mange endringer heller i et kort tidsrom), men det er aggregeringene som gjøres med dataen som tar lang tid. Derfor er konsistens på dataen mye viktigere. Vi er avhengig av at dataen er korrekt og blir sjekket mot klyngen mer enn at uthenting av ny data er rask.
+
+Ved første innlastning av nettsiden må den gjøre noen kall til databasen slik at den kan vise data på nettsiden. Siden det er 7 komponenter i denne nettsiden, har vi valgt å lagre hver komponent for seg i KV-store. Grunnen til dette er fordi hver komponent er ganske omfattende, og vi vil heller gjøre noen ekstra kall enn å laste et stort dataobjekt for hver oppdatering. Derfor blir det umiddelbart 7 kall mot KV-store når siden lastes inn.
+
+Dersom vi ikke hadde designet dataen på denne måten, ville det oppstått  et problem dersom kun noen få studenter oppdateres. For eksempel med "averageGradesByStudyHours" komponentet i et datasett med 100 studenter, der 1 student endret verdi:
+
+\begin{enumerate}
+  \item Hente alle studentobjekter fra databasen
+  \item Bygge et averageGradesByStudyHours objektet på nytt
+  \item Oppdater averageGradesByStudyHours i KV-store med den nye versjonen
+  \item Oppdater studenten i KV-store med den nye versjonen
+\end{enumerate}
+
+Det første steget ville bruke 100 kall, en for hver student, det tredje og fjerde steget er to kall. Til sammen blir dette 102 kall. Men siden vi har strukturert databasen ettersom, vil vi kunne minske dette tallet betraktelig. Med samme eksempel som over, her er måten vi gjør det på:
+
+\begin{enumerate}
+  \item Hente gammelt student-objekt fra KV-store
+  \item Hente komponent med key=component:averageGradesByStudyHours
+  \item Oppdatere dataen i komponentet i koden ved å gjøre beregninger
+  \item Lagre oppdatert komponentet i KV-store
+  \item Lagre oppdatert student-objekt i KV-store
+\end{enumerate}
+
+Steg 1, 2, 4 og 5 gjør 1 kall hver, som betyr at her gjør vi kun 4 kall mot KV-store. Denne metoden vil også brukes for å oppdatere de resterende komponentene, som betyr at hver oppdatering er kun 4 kall.
+
+Det er viktig å punktere at samme metode vil også bli brukt dersom man oppdaterer data ved å laste 
+opp en ny CSV fil. Den eneste forskjellen her er at programmet må først dekonstruere CSV-en for å hente innholdet før man gjør kall mot databasen.
+
+\subsubsection{Hva om vi er dataeier?}
+Den største forskjellen for produktet vårt ville vært hvor korrekt dataen er, hvem som hadde kunne gjort endringer, og hvordan/når de endringene ville blitt gjort. Nå kan det legges til eller endres når som helst, og det brukes verdier som ikke helt passer opp mot verdier vi heller er vant med, eller verdier som ikke er dekker hele spekteret vi ser etter (foreldreutdanning skulle gjerne hatt 3 ekstra verdier for bachelor/høyere utdanning, master, og phd. f.eks.).
+
+Datasettet hadde mest sannsynlig da sett noe annerledes ut, og vært tilpasset våre behov. Dette betyr i hovedsak noe sammenslåing av kolonner, samt verdi endringer fra strenger til tall, eller andre grupperingsmetodikker.
+
+Siden dette er forskning/spørreundersøkelser og data som skal hentes inn fra sikre kilder, men i større volum av gangen, ville det da heller vært logisk å laste hele csv-filer av gangen kontra slik som det vil være nå som man kan legge inn en og en student i nettskjemaet. Selvfølgelig ville det også vært mulig dersom datasett endrer seg, men hele datasettet ville nok blitt lastet på nytt med sjekker om oppdatert data.
+
+Vi ville fremdeles ikke byttet til RIAK da dataen vi har er mest avhengig av konsistens, og trenger ikke noen spesielt høy grad av tilgjengelighet. Pga. dette vil lineære lese-spørringer i ETCD være bedre enn serialiserte spørringer i RIAK.
