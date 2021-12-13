@@ -1,10 +1,13 @@
+\pagebreak
 \subsection{Design av Grafdatabase}
-Her brukte vi datasettet "Government Types of the World" fra Kaggle: https://www.kaggle.com/janzasadny/rulers-elections-and-irregular-governance
+Her brukte vi datasettet "Government Types of the World" fra Kaggle:
 
+
+https://www.kaggle.com/janzasadny/rulers-elections-and-irregular-governance
 \subsubsection{Representasjon av nodene og relasjonene mellom de}
 \FigureCounter
 \begin{figure}[H]
-  \includegraphics[scale=1]{images/milepael4/graph_database_base.drawio.png}
+  \includegraphics[width=\textwidth]{images/milepael4/graph_database_base.drawio.png}
 \end{figure}
 
 \subsubsection{Hvorfor grafdatabase?}
@@ -29,7 +32,7 @@ Denne framstiller populariteten blant de forskjellige Regjeringstypene ved å te
 
 \FigureCounter
 \begin{figure}[H]
-  \includegraphics[scale=1]{images/milepael4/regimeTypeByPopularity.png}
+  \includegraphics[scale=0.5]{images/milepael4/regimeTypeByPopularity.png}
 \end{figure}
 
 \textbf{Pseudo-Kode}
@@ -42,6 +45,7 @@ Denne framstiller populariteten blant de forskjellige Regjeringstypene ved å te
 \subsubsection{Regime Type Development}
 Denne komponenten viser utviklingen de forskjellige regjeringstypene gjennom årene. I 
 framstillingen brukes et linjediagram.
+
 
 \FigureCounter
 \begin{figure}[H]
@@ -59,6 +63,7 @@ framstillingen brukes et linjediagram.
 \subsubsection{Most Influential Leader}
 Most Influential Leader viser kun ett resultat. Dette er den lederen som totalt sett har vært oppnådd 
 mest basert på antall Regimer og hvor lenge de har holdt på.
+
 
 \FigureCounter
 \begin{figure}[H]

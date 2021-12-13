@@ -18,7 +18,6 @@ object StudentsByFreeTime extends App {
 
     lines.foreach(line => {
         val freeTime = line(24).toInt;
-
         if (freeTime == 1) veryLittle += 1;
         if (freeTime == 2) little += 1;
         if (freeTime == 3) medium += 1;
@@ -27,7 +26,6 @@ object StudentsByFreeTime extends App {
     });
 
     val total = veryLittle + little + medium + much + veryMuch;
-
     veryLittle = (veryLittle / total) * 100;
     little = (little / total) * 100;
     medium = (medium / total) * 100;
@@ -43,7 +41,6 @@ object StudentsByFreeTime extends App {
     );
 
     val spock = new Gson().toJson(studentsByFreeTime);
-
     val post = new HttpPost("http://127.0.0.1:2379/v2/keys/component%3AstudentsByFreeTime");
 
     val nameValuePairs = new ArrayList[NameValuePair]();

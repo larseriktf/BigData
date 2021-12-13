@@ -1,5 +1,7 @@
 \subsection{Design Av Dokumentdatabase}
-Her brukte vi datasettet "Socio-Economic Country Pofiles" fra Kaggle: https://www.kaggle.com/nishanthsalian/socioeconomic-country-profiles
+Her brukte vi datasettet "Socio-Economic Country Pofiles" fra Kaggle:
+
+https://www.kaggle.com/nishanthsalian/socioeconomic-country-profiles
 
 \subsubsection{Hvorfor kolonnedatabase?}
 I hovedårsak er det gunstig å bruke dokument-orientert database med dette settet da vi kun trenger å organisere basert på land, og vil gjøre svært få kall mot databasen. Aggregeringene våre kan i flere tilfeller da ligge som referanser i hvert land, og vil heller eksistere som sine egne dokumenter. Ved endringer i datasettet vil aggregeringer kjøres på nytt, og endre verdiene i disse dokumentene. Grunnen til at dette kan være til fordel er hvor tungt det fort blir med mange kall mot dokument-orienterte databaser, så det viktigste blir konsistens på dataen. Når data oppdateres i her vil kun dokumentene som er påvirket av endringene ha operasjoner utført på de.
@@ -106,7 +108,8 @@ For denne spørringen gir det mening å bruke en indeks som har referanse til al
   \end{itemize}
   \item Aggregeringer og indekser som påvirkes og er lagret som dokument kjøres og lages på nytt
   \begin{itemize}
-    \item Dette vil da bli noe av det dyrere som skjer da aggregeringene kan gjøre mange databasekall, men dette vil være avhengig av hvor mange dokument som skal endres, og om endringene som er gjort påvirker de faktiske aggregeringene.
+    \item Dette blir noe av det dyrere som skjer da aggregeringene kan gjøre mange databasekall, men dette vil være avhengig av hvor mange dokument som skal endres,
+    og om endringene som er gjort påvirker de faktiske aggregeringene.
   \end{itemize}
   \item Id feltet vil måtte være det første feltet i en dokument, og rekkefølgen på feltene i objektet vil alltid være det samme så lenge en av endringene som skjer ikke omdøping av felt-navnene 
 \end{enumerate}
