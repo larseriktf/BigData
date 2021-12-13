@@ -1,9 +1,0 @@
-val customSchema = StructType(array(
-    StructField("cowcode", IntegerType, true),
-    StructField("gwf_country", StringType, true),
-    StructField("gwf_casename", StringType, true),
-    StructField("gwf_startdate", DatetimeType, true),
-    StructField("gwf_enddate", DatetimeType, true),
-    StructField("gwf_regimetype", Stringtype, true)
-))
-

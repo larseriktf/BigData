@@ -1,10 +1,6 @@
 \subsection{World University Rankings (Kolonnefamiliedatabase)}
 
 Først leser vi csv filen med "inferSchema" satt til "true" for å opprette schema.
-\FigureCounter
-\begin{figure}
-    \includegraphics[width=\textwidth]{images/milepael5/csvRead.png}
-\end{figure}
 
 Jeg legger merke til at noen av datatypene ikke stemmer. Jeg ser at "world rank" er satt til streng, selv om det tilsynelatende er int. Men det går fin, siden den også inneholder verdier som "100 150". Derimot, "international" var satt til streng, fordi null-verdier var byttet ut med bindestrek , I tillegg så jeg at "international students" hadde verdier med tall og prosent-tegnet. Begge fikset jeg ved å bruke find and replace funksjonen i libreOffice og endre på csv-filen.
 
@@ -14,19 +10,14 @@ Da brukte jeg universityDf.printSchema() igjen for å sjekke at ting stemte, og 
     \includegraphics[width=\textwidth]{images/milepael5/printSchema.png}
 \end{figure}
 
-Det neste er å lagre den som en Parquet fil
-\FigureCounter
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{images/milepael5/writeParquet.png}
-\end{figure}
+Det neste er å lagre den som en Parquet fil.
+
+\code{Scala}{code/milepael5/readUniversitySaveToParquet.scala}
 
 \subsubsection{Første Aggregering}
 Den første aggregeringen jeg lagde viser de ti skolene med flest kvinnelige studenter. 
 
-\FigureCounter
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{images/milepael5/uniFemaleRatio.png}
-\end{figure}
+\code{Scala}{code/milepael5/universityByFemaleRatio.scala}
 \FigureCounter
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{images/milepael5/resUniFemRatio.png}
@@ -35,16 +26,10 @@ Den første aggregeringen jeg lagde viser de ti skolene med flest kvinnelige stu
 \subsubsection{Andre Aggregering}
 Denne er tilsvarende forrige aggregering, men denne gangen for mannlige studenter.
 
+\code{Scala}{code/milepael5/universityByMaleRatio.scala}
 \FigureCounter
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{images/milepael5/resUniMaleRatio.png}
-\end{figure}
-
-Så lagret jeg begge aggregeringene som CSV filer med én partisjon hver.
-
-\FigureCounter
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{images/milepael5/writeToFile.png}
 \end{figure}
 
 \subsubsection{Tredje Aggregering}
@@ -56,7 +41,7 @@ Jeg lagde også en aggregering som viser gjennomsnitts-poeng per år. Denne var,
     \includegraphics[width=\textwidth]{images/milepael5/avgScoreTotStudents.png}
 \end{figure}
 
-Her er den nye aggregeringen (Glemte å ta bilde av scala koden):
+Her er den nye aggregeringen:
 
 \FigureCounter
 \begin{figure}[H]
