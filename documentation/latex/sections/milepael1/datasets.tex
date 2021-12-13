@@ -1,0 +1,26 @@
+\subsection{Nøkkel-Verdi database: Student Performance Dataset}
+I dette settet har vi micro-skala data fra to videregående skoler i Portugal. Det tar for seg foreldres socio-økonomiske situasjon, og hvordan det påvirker barna sin utdanning.
+
+Nøkkel-verdi databasen serverer brukeren med raske queries og horizontalt skalerbar arkitektur som tillater at det å legge inn nye skoler med ny data blir enkelt. Dette er noe som kan være fint å bruke for et land eller fylke som ønsker å følge utdanningsnivåer eller holde øye med socio-økonomiske tilstander, i tillegg til administratorer o.l. ved skoler som ønsker å følge nasjonale eller internasjonale trender og kvalitet. Siden det heller ikke er krav om satt struktur, så kan ny data legges inn så og si slik den er.
+\paragraph{}
+Nøklene her er en kombinasjon av elev-id og skole. På nettsiden kan dette datasettet og dets aggregeringer brukes for å identifisere behov for hjelp til elever/grupper, samt hva slags hjelp de trenger.
+
+\subsection{Dokumentdatabase: Socio-Economic Country Profiles}
+Dette datasettet tar for seg forskjellig land, og deres socio-økonomiske profiler. Her har vi valgt ut data fra settet som vi kunne bruke for å skape en grunnleggende, og oversiktlig profil for hver nasjon. Dataen tar for seg GDP, diverse indekser (cost of living, quality of life, osv.), statlig forbruk, og skatteinntekter.
+
+I dokumentdatabasen er det landsprofiler med mye tilhørende data som vil endre seg relativt ofte. Disse profilene vil endre seg relativt ofte, og krever da høy fleksibilitet. I tillegg er det forskjellig informasjon som vil være nødvendig og tilgjengelig på forskjellige profiler, så en skjema-løs ordning er bra. En annen fordel er hvordan data fordeles, og gjør at nøstede og dypere søk yter bedre, og skaper høyere tilgjengelighet for brukeren.
+
+Settet brukes i Dokumentdatabase, da det faller seg naturlig å legge hver profil etter land, og siden dataen kan endres relativt ofte, og krever høy fleksibilitet. Aggregeringene som gjøres lagres som egne dokumenter.
+
+På nettsiden vil dette settet bli brukt som et oppslagsverk av nasjonale profiler, og som et sammenligningsverktøy som kan få frem forskjeller på en interjansjonal skala, samt tillater det også personer i administrative roller å følge trender.
+
+\subsection{Kolonnefamiliedatabase: University Profiles}
+Her har vi et datasett som går igjennom forksjellige universiteter og deres profiler. Vi valgte dette settet siden det bygger videre på det vi gjør i nøkkel-verdi databasen. 
+Vi plasserer dette settet i kolonnefamilie, da vi kan plassere data slik vi ønsker og skape nye grupperinger som er raskt tilgjengelige. Det vil si at vi kan for eksempel plassere aggregeringene i egne kolonner i samme tabell eller legge til kolonner med ny informasjon om skolene, samt legge til skoler som ikke har de samme kolonnene tilgjengelig.
+
+I Kolonnefamiliedatabasen har vi flere ferdige aggregeringer. Disse aggregeringene skal være lett tilgjengelige, og de skal kunne lagres i forskjellige kolonner innen samme tabell. Siden denne db-modellen også er skjemaløst, så kan vi sette kolonnenavn som vi vil, også innen samme tabell, og vi kan legge til nye kolonner i real-time om nødvendig. Med mange aggregeringer og mye data lagret i en kolonne, så reduserer det de nødvendige ressursene fra disken og hvor lang tid spørringene tar.
+
+\subsection{Grafdatabase: Reign og Regime}
+Graph-databasen fikk til slutt de politiske profilene for land. Her legger vi inn landene med regjeringstyper, og lenker Reign til Regime. Slik kan vi se sammenhengen mellom land, regjeringstyper og regimer. Vi kan også se når forskjellige politiske sammensetninger var populære. 
+
+I grafdatabasen har vi dypt relatert data som brukeren skal kunne lett se sammenhengen i. En bruker som følger med på internasjonal politikk eller verdensutvikling kan bruke dette for eksempel til å se styrken til regimer, hvilke land som deler politisk sammensetning, og deres stabilitet. Det som er viktig med denne seksjonen er at brukeren lett kan se sammenhengene, f.eks. kan man med en grafdatabase hente ut data basert på relasjonene(edges), og ikke bare nodene.
