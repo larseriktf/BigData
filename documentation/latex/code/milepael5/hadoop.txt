@@ -1,0 +1,8 @@
+hadoop fs -copyFromLocal country-profiles.parquet /country-profiles.parquet \newline
+hadoop fs -copyFromLocal university_write.parquet /university-write.parquet \newline
+hadoop fs -copyFromLocal student-performance.parquet /student-performance.parquet \newline
+hadoop fs -copyFromLocal reign_write.parquet /reign-write.parquet\newline
+hadoop fs -copyFromLocal regime_write.parquet /regime-write.parquet\newline
+hadoop fs -copyFromLocal leader_write.parquet /leader-write.parquet\newline
+hadoop fs -copyFromLocal election_write.parquet /election-write.parquet\newline
+//-copyToLocal for motsatt
