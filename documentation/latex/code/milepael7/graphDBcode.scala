@@ -29,8 +29,6 @@ regime.write.format("org.neo4j.spark.DataSource")
     .option("node.keys", "casename")
     .save()
 
-
-
 reignDf.write.format("org.neo4j.spark.DataSource")
     .mode("Overwrite")
     .option("url", "bolt://localhost:7687")
@@ -40,7 +38,7 @@ reignDf.write.format("org.neo4j.spark.DataSource")
     .option("node.keys", "ccode").save()
 
 
-must use `` when (.)dot is used in names
+//must use `` when (.)dot is used in names
 df.select("`source.country`").show()
 
 //legge til relasjon/joining av datasett gjort i Cypher

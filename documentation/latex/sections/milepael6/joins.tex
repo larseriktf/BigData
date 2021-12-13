@@ -49,9 +49,3 @@ Et annet bruksområde for broadcast i en join-setting er å bruke broadcast-join
 \lstinline {storDf.join(broadcast(litenDf), "id")}
 
 Grunnen til at man kan ønske å gjøre dette er ved bruk av et større og et mindre datasett, hvor man da ønsker å dele ut de mindre datasettet til hver executor. Hver executor som sitter sin seksjon av det store settet får en kopi av det lille, og kan da utføre join-handlingen betydelig mye raskere. Spark vil bruke broadcast-join automatisk dersom dataframen er under 10mb stor.
-
-\subsubsection{Neo4j MERGE}
-Vi valgte å integrere mot Neo4j med 2 datasett og koble disse sammen.
-
-\code{Scala}{code/milepael6/graphDBcode.scala}
-Her har vi da hentet ut de forskjellige datasettene og lagt de inn med nøkler på hver sine "id"-er. Deretter har vi lagt relasjonen på regimetype. Vi kan da hente inn alle landene som har hatt x regimetype.
