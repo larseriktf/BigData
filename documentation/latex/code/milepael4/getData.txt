@@ -1,0 +1,11 @@
+// Eksempel: Henter alle rader fra university_rating,
+// som har flere enn 2000 studenter
+SELECT * FROM university_rating WHERE num_students > 2000;
+
+// universityByFemaleRatio aggregeringen
+SELECT country, university_name, female_ratio
+FROM university.female_ratio
+
+// universityByMaleRatio aggregeringen
+SELECT country, university_name, male_ratio
+FROM university.male_ratio
