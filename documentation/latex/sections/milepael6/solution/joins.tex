@@ -23,6 +23,7 @@ Det finnes fire kategorier for transformeringer og handlinger:
 \end{itemize}
 
 \subsubsection{Narrow og Wide tranformering}
+\paragraph{}
 Det finnes til slutt to forskjellige varianter av transformeringer: Narrow og Wide. Narrow transformeringer er når partisjonen til forelder RDD-en brukes på det meste av en partisjon av barne RDD-en. Wide tranformering er når flere barne-RDD partisjoner er avhengige av én forelder-RDD partisjon, i tillegg vil en wide-tranformering innebære en "shuffling"(omstokking) av data fordi den samma dataen kan være tilgjengelig på flere partisjoner. Å unngå omstokking av data vil passe på ytelsen i programmet.
 
 \FigureCounter
@@ -37,7 +38,12 @@ Det finnes til slutt to forskjellige varianter av transformeringer: Narrow og Wi
 
 \code{Scala}{code/milepael6/joinCode.scala}
 
-I denne kodebiten så har vi hentet ut en seksjon av dataframen(DF) og brukt \lstinline{.persist(MEMORY_ONLY)} for å lagre til kun minne. \lstinline{Type} persist settes basert på størrelsen til dataen, deretter broadcaster vi denne DF-en, som betyr at vi sender en \textit{read-only} kopi til hver av executorene som gjør en handling, som da vil fyre av persistence-kallet. Dette skjer slik på grunn av lazy loading.
+\paragraph{}
+ Vi henter ut en seksjon av dataframen(DF)
+ og bruker:\lstinline{.persist(MEMORY_ONLY)} for å lagre til kun minne.
+ \lstinline{Type} persist settes basert på størrelsen til dataen,
+  deretter broadcaster vi denne DF-en, som betyr at vi sender en 
+  \textit{read-only} kopi til hver av executorene som gjør en handling, som da vil fyre av persistence-kallet. Dette skjer slik på grunn av lazy loading.
 
 Etter dette gjør vi en join-with på de resulterende radene, hvor de matches etter "FatherEdu" og "MotherEdu" kolonnene. En join-with transformering er en narrow-transform. Deretter flater vi ut resultatet til en dataframe og skriver til Cassandra.
 

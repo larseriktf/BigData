@@ -1,6 +1,7 @@
 \subsection{Alternative løsninger}
 
 \subsubsection{Hvordan data kan lagres i Cassandra}
+\paragraph{}
 I denne løsningen lagres både rådata og relaterende komponenter i Cassandra. Tanken er å optimalisere antall kall til databasen når datasettet oppdateres, siden komponentene baserer seg på rådataen. I stedet for å oppdatere alle rader med gammel og ny data, oppdaterer den kun de nye radene ved å sjekke hva som allerede finnes i rådataen. På grunn av dette vil antall kall tilsvare antall endrede/nye rader pluss oppdatering i rådataen og komponentene.
 
 Det er også mulig å \textit{kun} lagre komponentene i Cassandra, som betyr vesentlig mindre brukt lagringsplass i databasen. Siden hver kolonne har en primærnøkkel kan denne brukes til å oppdatere dataen i komponentene, men da må hver komponent bli oppdatert individuelt hver gang data oppdateres. Antall kall tilsvarer derfor antall komponenter.

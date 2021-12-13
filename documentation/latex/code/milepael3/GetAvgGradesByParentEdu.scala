@@ -14,7 +14,8 @@ case class AvgGradesByParentEdu(
 
 object HttpGetPostTest extends App {
 
-    val url = "http://127.0.0.1:2379/v2/keys/component%3AaverageGradesByParentEducation";
+    val url="http://127.0.0.1:2379/v2/keys/component%3
+    AaverageGradesByParentEducation";
     val result = scala.io.Source.fromURL(url).mkString;
     
     println(result);
